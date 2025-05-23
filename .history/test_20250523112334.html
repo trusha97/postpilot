@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden m-0 p-0 w-full font-sans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>PostPilot-2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-grace {
+            font-family: 'Covered By Your Grace', cursive;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden m-0 p-0 w-full font-sans">
+    <div class="container max-w-[1440px] mx-auto">
+        <div class="combine-header-sec-1 bg-[#E0F8F2] relative">
+            <header class="z-10 absolute top-[10px] w-full bg-[#FFFFFF] h-auto ">
+                <div class="sub-header flex flex-wrap items-center justify-between px-4 md:px-[75px] py-4">
+                    <img src="images/logo.svg" alt="PostPilot Logo" class="w-[120px] md:w-auto">
+                    <button class="md:hidden flex flex-col justify-between h-5 w-6" onclick="toggleMenu()">
+                        <span class="block w-full h-[2px] bg-black"></span>
+                        <span class="block w-full h-[2px] bg-black"></span>
+                        <span class="block w-full h-[2px] bg-black"></span>
+                    </button>
+
+
+                    <nav id="navMenu"
+                        class="w-full md:w-auto hidden md:flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-[19px] mt-4 md:mt-0">
+
+                        <ul class="flex flex-col md:flex-row gap-4 md:gap-[19px] text-[14px] font-[900]">
+                            <li class="flex hover:text-blue-900 hover:underline">
+                                <a href="#">Resources</a>
+                                <img src="images/scroll arrow.svg" class="ml-2 pt-1 w-4">
+                            </li>
+                            <li class="hover:text-blue-900 hover:underline">
+                                <a href="#">Success stories</a>
+                            </li>
+                            <li class="flex hover:text-blue-900 hover:underline">
+                                <a href="#">Company</a>
+                                <img src="images/scroll arrow.svg" class="ml-2 pt-1 w-4">
+                            </li>
+                            <li class="hover:text-blue-900 hover:underline">
+                                <a href="#">Pricing</a>
+                            </li>
+                        </ul>
+
+
+                        <div class="auth flex flex-col md:flex-row gap-3 md:gap-[18px] text-[14px] font-[500]">
+                            <a class="py-[10px] px-[18px] border-[2px] rounded-[12px] shadow-[3px_3px_0px_black] text-center"
+                                href="#">Login</a>
+                            <a class="bg-[#FF6D2C] px-[20px] pt-[10px] pb-[10px] text-white border-[2px] border-[#2E2F35] rounded-[12px] shadow-[3px_3px_0px_black] text-center"
+                                href="#">Create free account</a>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+
+            <section class="relative z-0 pt-[100px] md:pt-[150px]">
+                <div
+                    class="herosecmain flex flex-col md:flex-row items-center md:items-start px-4 md:px-0 gap-[40px] md:gap-0">
+
+
+                    <div class="heroleft w-full md:w-1/2 md:pl-[75px] py-[60px] md:py-[128px] flex flex-col gap-[30px]">
+                        <div class="left-top flex flex-col gap-[25px]">
+                            <h1
+                                class="text-[36px] sm:text-[42px] md:text-[82px] font-[700] text-[#2E2F35] leading-tight">
+                                Meet your<br>
+                                <span class="text-[#009387] font-[400] font-grace">favorite</span> new (old)<br>
+                                marketing channel.
+                            </h1>
+                        </div>
+
+                        <div class="left-bottom flex flex-col gap-[24px] md:gap-[48px]">
+                            <p class="text-[#58595D] text-[16px] sm:text-[18px] font-[500] leading-relaxed">
+                                Remarkable results. Easier than email. Postcard marketing<br class="hidden md:block">
+                                reinvented for modern ecommerce.
+                            </p>
+                            <div
+                                class="risk-free flex flex-col sm:flex-row items-start sm:items-center gap-[20px] md:gap-[40px]">
+                                <a class="py-[14px] px-[32px] bg-[#FF6D2C] shadow-[3px_3px_0px_black] border-[2px] border-black rounded-[15px] text-white text-center"
+                                    href="#">Try it Risk-free</a>
+                                <img src="images/5-star.svg" class="w-[120px] md:w-auto">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative w-full md:w-1/2 flex justify-center items-center">
+                        <img src="images/snax.svg"
+                            class="absolute top-[-20px] sm:top-0 left-1/2 -translate-x-1/2 w-[160px] sm:w-[200px] md:w-auto z-0">
+                        <img src="images/180day.svg"
+                            class="relative z-10 h-[300px] sm:h-[400px] md:h-[625px] w-auto max-w-full">
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ##### section-2 #### -->
+
+        <section class="flex flex-col justify-center items-center bg-[#FFFFFF] gap-[48px]">
+
+            <h1
+                class="pt-[80px] px-4 sm:px-[60px] lg:px-[120px] text-[30px] sm:text-[40px] lg:text-[63px] font-[700] text-center text-[#2E2F35] leading-tight">
+                Trusted by thousands<br class="hidden sm:inline"> of top DTC
+                <span class="text-[#009387] font-grace">brands.</span>
+            </h1>
+
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[40px] sm:gap-[48px] pb-[64px] px-4 sm:px-8">
+
+
+                <div class="flex flex-col gap-[32px] justify-center items-center">
+                    <img src="images/chewgum.svg" alt="Chew Gum">
+                    <img src="images/rungum.svg" alt="Run Gum">
+                </div>
+
+
+                <div class="flex flex-col gap-[32px] justify-center items-center">
+                    <img src="images/brand.svg" alt="Brand">
+                    <img src="images/Beardbrand.svg" alt="Beardbrand">
+                </div>
+
+
+                <div class="flex flex-col gap-[32px] justify-center items-center">
+                    <img src="images/provip.svg" alt="ProVIP">
+                    <img src="images/PROMIX.svg" alt="Promix">
+                </div>
+
+
+                <div class="flex flex-col gap-[32px] justify-center items-center">
+                    <img src="images/miss.svg" alt="Miss">
+                    <img src="images/scotch.svg" class="w-[60px] h-[32px]" alt="Scotch">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ##### section-3#### -->
+        <section class=" bg-[#F3FAFA]">
+            <div class="main-content flex flex-col justify-center items-center gap-[58px]">
+                <div class="top">
+                    <h1
+                        class="pt-[106px] px-[210px] text-[63px] font-[700] text-[#2E2F35] text-center max-xl:text-[40px] max-lg:text-[40px] max-lg:px-[150px] max-md:text-[35px] max-md:px-[25px] max-sm:text-[30px]">
+                        Why use
+                        direct
+                        mail?<br>It
+                        <span class="text-[#009387] font-grace">works</span> like crazy.
+                    </h1>
+                </div>
+                <div
+                    class="bottom grid grid-cols-3 items-center gap-[170px] pb-[96px] max-xl:gap-[120px] max-lg:grid-cols-2 max-sm:grid-cols-1">
+                    <div class=" first">
+                        <h2 class="text-[63px] font-[700] text-[#2E2F35] max-md:text-[50px] max-sm:text-[30px]">28X</h2>
+                        <p class="text-[14px] font-[500] text-[#58595D]">Higher response rate than email<br>&
+                            digital
+                        </p>
+                    </div>
+                    <div class="second">
+                        <img src="images/off.svg">
+                        <p class="text-[14px] font-[500] text-[#58595D]">Your messages get read</p>
+                    </div>
+                    <div class="third">
+                        <h2 class="text-[63px] font-[700] text-[#2E2F35] max-md:text-[50px] max-sm:text-[30px]"">17 Days</h2>
+                        <p class=" text-[14px] font-[500] text-[#58595D]">Lifespan of a postcard vs.<br>seconds
+                            for email
+                            or SMS</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ##### section-4#### -->
+        <section class="bg-[#FDF3EA]">
+            <div class="flex flex-col gap-24 px-4 sm:px-6 md:px-10 lg:px-[75px]">
+
+
+                <div class="text-center pt-16">
+                    <h2
+                        class="font-[700] text-[#2E2F35] text-[24px] sm:text-[30px] md:text-[40px] lg:text-[50px] xl:text-[70px] leading-tight">
+                        PostPilot makes it a <span class="text-[#009387] font-grace">cinch</span> to<br
+                            class="hidden sm:block">
+                        send personalized, profit-<br class="hidden sm:block">generating postcards.
+                    </h2>
+                </div>
+
+
+                <div class="flex flex-col md:flex-row items-start gap-16">
+                    <div class="flex flex-col gap-8 max-w-full md:max-w-[600px]">
+                        <h2
+                            class="font-[700] text-[#2E2F35] text-[30px] sm:text-[40px] md:text-[50px] xl:text-[80px] leading-tight tracking-[-2px]">
+                            <span class="text-[#009387] font-grace font-[400]">Powerful</span><br>
+                            acquisition <br>& retention
+                        </h2>
+                        <p class="text-[#58595D] text-[16px] sm:text-[18px] md:text-[20px] font-[500]">
+                            Send one-off or triggered campaigns to customers & prospects.<br>
+                            Target email leads with MailMatch™.
+                        </p>
+                        <div class="relative border-2 rounded-[15px] p-6 w-full max-w-[516px]">
+                            <img src="images/double-quote.svg" class="absolute -top-4 left-6 w-12 h-8" />
+                            <p class="text-[#58595D] text-[14px] sm:text-[16px] font-[500] pt-6">
+                                It’s like Klaviyo for direct mail. The results are absolutely insane.
+                            </p>
+                            <div class="flex justify-between items-center pt-4">
+                                <p class="text-[#A89B90] text-[12px] sm:text-[14px] font-[400]">Ash Melwani, CMO</p>
+                                <img src="images/obvi.svg" alt="Obvi Logo" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="flex flex-col md:flex-row-reverse items-start gap-16">
+                    <div class="flex flex-col gap-8 max-w-full md:max-w-[600px]">
+                        <h2
+                            class="font-[700] text-[#2E2F35] text-[28px] sm:text-[38px] md:text-[50px] xl:text-[60px] leading-tight tracking-[-2px]">
+                            <span class="text-[#009387] font-grace font-[400]">Fight back</span> against iOS <br>
+                            updates, jacked-up CPCs & spam folders
+                        </h2>
+                        <p class="text-[#58595D] text-[16px] sm:text-[18px] md:text-[20px] font-[500]">
+                            Deliver your message to all of your customers — for less than the cost of a click.
+                        </p>
+                        <div class="relative border-2 rounded-[15px] p-6 w-full max-w-[516px]">
+                            <img src="images/double-quote.svg" class="absolute -top-4 left-6 w-12 h-8" />
+                            <p class="text-[#58595D] text-[14px] sm:text-[16px] font-[500] pt-6">
+                                PostPilot is our new weapon against sinking email engagement and rising PPC costs.
+                                The results and ROI have been outstanding. It’s now one of our core marketing channels
+                                to increase acquisition & LTV.
+                            </p>
+                            <div class="flex justify-between items-center pt-4">
+                                <p class="text-[#A89B90] text-[12px] sm:text-[14px] font-[400]">Leah Keith, GM</p>
+                                <img src="images/overlander.svg" alt="Overlander Logo" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="flex flex-col md:flex-row items-start gap-16">
+                    <div class="flex flex-col gap-8 max-w-full md:max-w-[600px]">
+                        <h2
+                            class="font-[700] text-[#2E2F35] text-[28px] sm:text-[38px] md:text-[50px] xl:text-[58px] leading-tight tracking-[-2px]">
+                            Done for <span class="text-[#009387] font-grace font-[400]">you</span>
+                        </h2>
+                        <p class="text-[#58595D] text-[16px] sm:text-[18px] md:text-[20px] font-[500]">
+                            From design & strategy to stamp-licking, our ecom experts help you every step of the way.
+                        </p>
+                        <div class="relative border-2 rounded-[15px] p-6 w-full max-w-[516px]">
+                            <img src="images/double-quote.svg" class="absolute -top-4 left-6 w-12 h-8" />
+                            <p class="text-[#58595D] text-[14px] sm:text-[16px] font-[500] pt-6">
+                                The team is so knowledgeable and beyond helpful.<br>
+                                I’m blown away by their communication, detail, and attentiveness and always feel like
+                                they have
+                                our best interest in mind. Definitely worth a try.
+                            </p>
+                            <div class="flex justify-between items-center pt-4">
+                                <p class="text-[#A89B90] text-[12px] sm:text-[14px] font-[400]">Holly Davies, Marketing
+                                    Director
+                                </p>
+                                <img src="images/paragon.svg" alt="Paragon Logo" />
+                            </div>
+                        </div>
+
+
+                        <div class="pt-4 flex justify-center md:justify-start">
+                            <a href="#"
+                                class="inline-block text-center w-[250px] h-[64px] px-6 py-4 mb-4 bg-[#FF6D2C] text-white font-bold rounded-[15px] shadow-[3px_3px_0px_black]">
+                                Try it RISK-free
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ##### section-5 #### -->
+
+        <section class="bg-white">
+            <div class="px-4 sm:px-6 lg:px-[75px] py-[64px] lg:py-[96px] flex flex-col gap-[48px]">
+                <h1
+                    class="font-[700] text-[28px] sm:text-[36px] md:text-[45px] lg:text-[55px] xl:text-[64px] text-center leading-tight">
+                    Everything your brand needs to<br>
+                    <span
+                        class="text-[#009387] font-grace text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] xl:text-[70px] font-[400]">
+                        make your brand unforgettable
+                    </span>
+                </h1>
+
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px]">
+
+
+                    <div class="bg-[#FDF3EA] p-6 flex flex-col gap-6 rounded-[13px]">
+                        <img src="images/klaviyo.svg" alt="Klaviyo Logo" class="mx-auto">
+                        <div class="text-center flex flex-col gap-2">
+                            <h2 class="text-[20px] md:text-[24px] font-[700] text-[#2E2F35]">Plug-and-play with<br>your
+                                stack
+                            </h2>
+                            <p class="text-[14px] md:text-[16px] font-[400] text-[#2E2F35]">
+                                Native integrations provide seamless segmentation, automation & tracking. No clunky
+                                spreadsheets.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="bg-[#E0F8F2] p-6 flex flex-col gap-6 rounded-[13px]">
+                        <img src="images/cart.svg" alt="Cart Icon" class="mx-auto">
+                        <div class="text-center flex flex-col gap-2">
+                            <h2 class="text-[20px] md:text-[24px] font-[700] text-[#2E2F35]">Run campaigns<br>on
+                                autopilot</h2>
+                            <p class="text-[14px] md:text-[16px] font-[400] text-[#2E2F35]">
+                                Ink profits while you sleep: Just set it and forget it.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="bg-[#EEECFF] p-6 flex flex-col gap-6 rounded-[13px]">
+                        <img src="images/graph.svg" alt="Graph Icon" class="mx-auto">
+                        <div class="text-center flex flex-col gap-2">
+                            <h2 class="text-[20px] md:text-[24px] font-[700] text-[#2E2F35]">Real-time ROI dashboard
+                            </h2>
+                            <p class="text-[14px] md:text-[16px] font-[400] text-[#2E2F35]">
+                                Track performance of every postcard by customer or discount code. Your CFO will love it.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="bg-[#D9F2F7] p-6 flex flex-col gap-6 rounded-[13px]">
+                        <img src="images/longshot.svg" alt="Robot Handwriting" class="mx-auto">
+                        <div class="text-center flex flex-col gap-2">
+                            <h2 class="text-[20px] md:text-[24px] font-[700] text-[#2E2F35]">Deliver WOW with *real*
+                                handwritten
+                                cards</h2>
+                            <p class="text-[14px] md:text-[16px] font-[400] text-[#2E2F35]">
+                                Our proprietary robots use real pens and ink for an unforgettable VIP touch.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="bg-[#FAEDED] p-6 flex flex-col gap-6 rounded-[13px]">
+                        <img src="images/predictable.svg" alt="Predictable Pricing" class="mx-auto">
+                        <div class="text-center flex flex-col gap-2">
+                            <h2 class="text-[20px] md:text-[24px] font-[700] text-[#2E2F35]">Predictable pricing</h2>
+                            <p class="text-[14px] md:text-[16px] font-[400] text-[#2E2F35]">
+                                Unlike CPCs, postage rates don’t change based on competition or who you’re targeting.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="bg-[#F1F1F1] p-6 flex flex-col gap-6 rounded-[13px]">
+                        <img src="images/DSI.svg" alt="DSI Icon" class="mx-auto">
+                        <div class="text-center flex flex-col gap-2">
+                            <h2 class="text-[20px] md:text-[24px] font-[700] text-[#2E2F35]">Complimentary concierge
+                                service
+                            </h2>
+                            <p class="text-[14px] md:text-[16px] font-[400] text-[#2E2F35]">
+                                DTC is in our DNA. Our pros will build your strategy and custom designs using
+                                battle-tested best
+                                practices.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ##### section-6 #### -->
+        <section class="bg-[#E3F8F8]">
+            <div
+                class="main-content flex flex-col justify-between  px-[75px] py-[96px] gap-[59px] max-sm:px-[40px] max-md:px-[54px] max-lg:px-[65px]">
+                <h1 class="text-[60px] font-[700] text-[##2E2F35] text-center  max-sm:text-[35px] ">
+                    Fast launch. Fast results.<br><span
+                        class="text-[60px] font-[400] text-[#009387] font-grace max-sm:text-[35px]">Here's
+                        how</span></h1>
+
+                <div class="content flex flex-col gap-[32px] justify-start">
+                    <div class="1 flex gap-[40px]">
+                        <h2 class="text-[#00938766] text-[48px] font-[400] font-grace">01</h2>
+                        <h2 class="text-[#2E2F3566] text-[36px] font-[700]">Segment</h2>
+                    </div>
+                    <div class="2 flex gap-[40px] ">
+                        <h2 class="text-[#00938766] text-[48px] font-[400] font-grace">02</h2>
+                        <h2 class="text-[#2E2F3566] text-[36px] font-[700]">Design</h2>
+                    </div>
+                    <div class="3 flex gap-[40px]">
+                        <div class="line">
+                            <h2 class="text-[#009387] text-[48px] font-[400] font-grace">03</h2>
+                            <img src="images/line.svg">
+                        </div>
+                        <div class="send flex flex-col">
+                            <h2 class="text-[#2E2F35] text-[36px] font-[700]">Send</h2>
+
+                            <p class="text-[#58595D] text-[20px] font-[500]">One-off announcements or automatically
+                                <br>triggered flows. Customers receive their
+                                <br>personalized cards within a week.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="4 flex gap-[40px] ">
+                        <h2 class="text-[#00938766] text-[48px] font-[400] font-grace   ">04</h2>
+                        <h2 class="text-[#2E2F3566] text-[36px] font-[700]">Convert</h2>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ##### section-7 #### -->
+        <section class="bg-white flex flex-col justify-between py-[95px] gap-[74px]">
+            <h1 class="text-center text-[63px] font-[700] text-[#2E2F35] max-md:text-[40px]">
+                PostPilot is 🔥 for
+                <span class="text-[#009387] font-grace">DTC</span>
+            </h1>
+
+
+            <div class="swiper mySwiper w-[40%] mx-auto px-4 max-md:w-[90%]">
+
+
+                <div class="swiper-wrapper">
+
+
+                    <div class="swiper-slide border-2 border-black rounded-[15px] p-[34px] bg-white max-w-[100%]">
+                        <div class="profile flex gap-4 mb-4">
+                            <img src="images/helen-img.svg" alt="Helen">
+                            <div class="flex justify-between w-full">
+                                <div>
+                                    <h2 class="font-bold">Helen Guo</h2>
+                                    <p>@HelenGuo_</p>
+                                </div>
+                                <img src="images/twitter.svg" alt="Twitter">
+                            </div>
+                        </div>
+                        <p>Been using PostPilot for years. Good for re-engagement. And you can get creative with your
+                            messaging.
+                        </p>
+                    </div>
+
+
+                    <div class="swiper-slide border-2 border-black rounded-[15px] p-[34px] bg-white max-w-[100%]">
+                        <div class="profile flex gap-4 mb-4">
+                            <img src="images/nathan img.svg" alt="Nathan">
+                            <div class="flex justify-between w-full">
+                                <div>
+                                    <h2 class="font-bold">Nathan Woods</h2>
+                                    <p>@HeisNathan</p>
+                                </div>
+                                <img src="images/twitter.svg" alt="Twitter">
+                            </div>
+                        </div>
+                        <p>Been using PostPilot for years. Good for re-engagement. And you can get creative with your
+                            messaging.
+                        </p>
+                    </div>
+
+
+                    <div class="swiper-slide border-2 border-black rounded-[15px] p-[34px] bg-white max-w-[100%]">
+                        <div class="profile flex gap-4 mb-4">
+                            <img src="images/chris img.svg" alt="Chris">
+                            <div class="flex justify-between w-full">
+                                <div>
+                                    <h2 class="font-bold">Chris Lander</h2>
+                                    <p>@chris_basis</p>
+                                </div>
+                                <img src="images/twitter.svg" alt="Twitter">
+                            </div>
+                        </div>
+                        <p>Been using PostPilot for years. Good for re-engagement. And you can get creative with your
+                            messaging.
+                        </p>
+                    </div>
+
+
+                    <div class="swiper-slide border-2 border-black rounded-[15px] p-[34px] bg-white max-w-[100%]">
+                        <div class="profile flex gap-4 mb-4">
+                            <img src="images/helen-img.svg" alt="Helen">
+                            <div class="flex justify-between w-full">
+                                <div>
+                                    <h2 class="font-bold">Helen Guo</h2>
+                                    <p>@HelenGuo_</p>
+                                </div>
+                                <img src="images/twitter.svg" alt="Twitter">
+                            </div>
+                        </div>
+                        <p>Been using PostPilot for years. Good for re-engagement. And you can get creative with your
+                            messaging.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+
+
+                <div class="swiper-pagination mt-6"></div>
+            </div>
+        </section>
+
+
+
+        <!-- ##### section-8 #### -->
+        <section class="bg-[#EEECFF] px-6 sm:px-10 md:px-16 lg:px-[75px] py-16 md:py-20 lg:py-[96px]">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-10 lg:gap-[64px]">
+                <!-- Left image -->
+                <div class="w-full lg:w-1/2 flex justify-center">
+                    <img src="images/good.svg" alt="Good" class="max-w-full h-auto">
+                </div>
+
+
+                <div class="w-full lg:w-1/2 flex flex-col gap-9 text-center lg:text-left">
+                    <h1
+                        class="text-[32px] sm:text-[38px] md:text-[45px] lg:text-[63px] font-bold text-[#2E2F35] leading-tight">
+                        How <span class="text-[#009387] font-[400] font-grace">Obvi</span> Drives <br
+                            class="hidden sm:block">Profits
+                        with Hands-<br class="hidden sm:block">Off Postcard <br class="hidden sm:block">Campaigns
+                    </h1>
+
+                    <p class="text-[16px] sm:text-[18px] md:text-[20px] font-medium text-[#58595D]">
+                        The 🚀 supplements brand wanted to offset high ad costs and reach dormant customers. They
+                        scored 1000%+ ROIs.
+                    </p>
+
+
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-6">
+                        <div>
+                            <h2 class="text-[28px] sm:text-[34px] font-bold text-[#2E2F35]">1468%</h2>
+                            <p class="text-[14px] font-medium text-[#58595D]">ROI</p>
+                        </div>
+                        <div>
+                            <h2 class="text-[28px] sm:text-[34px] font-bold text-[#2E2F35]">8.59%</h2>
+                            <p class="text-[14px] font-medium text-[#58595D]">Conversion Rate</p>
+                        </div>
+                        <div>
+                            <h2 class="text-[28px] sm:text-[34px] font-bold text-[#2E2F35]">$73,457</h2>
+                            <p class="text-[14px] font-medium text-[#58595D]">Sales Generated</p>
+                        </div>
+                    </div>
+
+
+                    <div class="flex justify-center lg:justify-start">
+                        <a href="#"
+                            class="inline-block py-5 px-10 text-[14px] font-bold text-[#2E2F35] border-2 border-[#2E2F35] rounded-[15px] bg-white shadow-[3px_3px_0px_black]">
+                            Read Case Study
+                        </a>
+                    </div>
+
+
+                    <div class="flex flex-wrap justify-center lg:justify-start items-center gap-6 mt-3">
+                        <img src="images/obvis8.svg" alt="Obvi Logo" class="h-[40px]">
+                        <img src="images/Bulletproof.svg" alt="Bulletproof" class="h-[40px]">
+                        <img src="images/BOOM.svg" alt="Boom" class="h-[40px]">
+                        <img src="images/orbit.svg" alt="Orbit" class="h-[40px]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ##### section-9 #### -->
+        <section class="bg-[#FF6D2C]">
+            <div
+                class="main-content flex flex-col-reverse lg:flex-row justify-between items-center px-[20px] lg:px-[40px] gap-[40px] py-[40px]">
+
+
+                <div class="left flex flex-col gap-[17px] text-center lg:text-left">
+                    <h1 class="text-[50px] lg:text-[81px] font-[700] text-white leading-tight">
+                        Try PostPilot <br class="hidden lg:block" />Risk-Free
+                    </h1>
+
+                    <div class="No flex flex-col gap-[32px] items-center lg:items-start">
+                        <p class="text-[16px] lg:text-[20px] font-[500] text-white">
+                            No contracts. No commitments. Guaranteed results.*
+                        </p>
+
+                        <div class="shopify-rating flex flex-col sm:flex-row gap-[20px] sm:gap-[40px] items-center">
+                            <a class="py-[14px] px-[32px] w-[180px] h-[54px] text-[14px] font-[700] text-[#2E2F35] border-2 border-[#2E2F35] rounded-[15px] bg-white shadow-[3px_3px_0px_black] text-center"
+                                href="#">GET STARTED</a>
+                            <img src="images/5-star-shopify.svg" class="w-[150px] sm:w-auto" />
+                        </div>
+
+                        <p class="text-[12px] lg:text-[14px] font-[500] text-white text-center lg:text-left">
+                            *For qualified brands with over $1M annual Shopify revenue.
+                        </p>
+                    </div>
+                </div>
+
+
+                <img src="images/paw.svg" alt="Paw Graphic"
+                    class="w-[200px] sm:w-[300px] md:w-[350px] lg:w-[400px] xl:w-[500px]" />
+            </div>
+        </section>
+
+
+        <!-- ##### section-10 #### -->
+        <section class="bg-[#F3FAFA] py-[64px] sm:py-[80px] lg:py-[96px]">
+            <div
+                class="main-content px-[16px] sm:px-[32px] lg:px-[75px] flex flex-col gap-[48px] sm:gap-[64px] lg:gap-[74px]">
+
+
+                <div class="top flex flex-col items-center text-center">
+                    <h1 class="text-[32px] sm:text-[48px] lg:text-[68px] font-[700] text-[#2E2F35] leading-tight">
+                        Latest trends & <span class="text-[#009387] font-[400] font-grace">insights</span>
+                    </h1>
+                </div>
+
+
+                <div class="bottom grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+
+
+                    <div class="first flex flex-col gap-[20px] items-center text-center sm:items-start sm:text-left">
+                        <img src="images/low-cost.svg" alt="Low Cost Campaigns" class="w-full max-w-[360px]">
+                        <h2 class="text-[20px] sm:text-[22px] lg:text-[26px] font-[700] text-[#2E2F35] leading-snug">
+                            3 Low-Cost Campaigns <br>You Must Run to Win BFCM
+                        </h2>
+                    </div>
+
+
+                    <div class="second flex flex-col gap-[20px] items-center text-center sm:items-start sm:text-left">
+                        <img src="images/postcard.svg" alt="Postcard Marketing" class="w-full max-w-[360px]">
+                        <h2 class="text-[20px] sm:text-[22px] lg:text-[26px] font-[700] text-[#2E2F35] leading-snug">
+                            Postcard Marketing: The <br> Definitive Guide to High <br>ROI [2022]
+                        </h2>
+                    </div>
+
+
+                    <div class="third flex flex-col gap-[20px] items-center text-center sm:items-start sm:text-left">
+                        <img src="images/thanks.svg" alt="Thank You Notes" class="w-full max-w-[360px]">
+                        <h2 class="text-[20px] sm:text-[22px] lg:text-[26px] font-[700] text-[#2E2F35] leading-snug">
+                            The Ultimate Guide to Thank <br>You Notes for Ecommerce
+                        </h2>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="bg-[#FFFFFF]">
+            <div
+                class="main-content px-4 sm:px-8 lg:px-[75px] py-[64px] lg:py-[96px] flex flex-col gap-[64px] lg:gap-[96px]">
+
+
+                <div class="top flex flex-col lg:flex-row gap-[48px] lg:gap-[128px]">
+
+
+                    <div class="first flex flex-col gap-[20px] lg:gap-[25px]">
+                        <img src="images/eco-freindly.svg" alt="Eco Friendly" class="h-[109px] w-[112px]">
+                        <p class="text-[14px] font-[500] text-[#58595D] leading-[22px]">
+                            Our paper is sourced from FSC-certified mills.<br>
+                            We plant enough trees to more than double our paper usage.
+                        </p>
+                    </div>
+
+
+                    <div class="second list-company flex flex-col gap-[20px] lg:gap-[27px]">
+                        <h2 class="text-[14px] font-[700] text-[#2E2F35]">Company</h2>
+                        <ul class="text-[16px] font-[500] text-[#2E2F35] space-y-2">
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Career</a></li>
+                            <li><a href="#">Partner program</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="third list-company flex flex-col gap-[20px] lg:gap-[27px]">
+                        <h2 class="text-[14px] font-[700] text-[#2E2F35]">About</h2>
+                        <ul class="text-[16px] font-[500] text-[#2E2F35] space-y-2">
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Reviews</a></li>
+                            <li><a href="#">Direct Mail Academy</a></li>
+                            <li><a href="#">Success stories</a></li>
+                            <li><a href="#">Terms & conditions</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="contact flex flex-col gap-[20px] lg:gap-[27px]">
+                        <h2 class="text-[12px] font-[700] text-[#2E2F35]">Contact</h2>
+                        <p class="text-[15px] font-[500] text-[#2E2F35]">
+                            <a href="mailto:support@postpilot.com">support@postpilot.com</a>
+                        </p>
+                        <p class="text-[15px] font-[700] text-[#58595D] leading-[22px]">
+                            Printed with ❤️ at our facility in<br class="hidden sm:inline"> South Carolina.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="bottom flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-0">
+
+
+                    <div class="left flex flex-col items-center sm:items-start gap-[9px] text-center sm:text-left">
+                        <img src="images/logo.svg" class="h-[24px] w-[130px]" alt="Logo">
+                        <p class="text-[14px] text-[#2E2F35]">© 2022 PostPilot, Inc. All rights reserved.</p>
+                    </div>
+
+
+                    <div class="right flex flex-col sm:flex-row gap-[12px] sm:gap-[16px]">
+                        <a class="py-[13px] px-[22px] w-full sm:w-[83px] h-[44px] text-[14px] font-[500] text-[#2E2F35] border border-[2px] border-[#2E2F35] rounded-[12px] bg-[#FFFFFF] shadow-[3px_3px_0px_black] text-center"
+                            href="#">Login</a>
+                        <a class="py-[13px] px-[22px] w-full sm:w-[137px] h-[44px] text-[14px] font-[500] text-[#FFFFFF] border border-[2px] border-[#2E2F35] rounded-[12px] bg-[#FF6D2C] shadow-[3px_3px_0px_black] text-center"
+                            href="#">Try it for free</a>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        const swiper = new Swiper('.mySwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 3000, // 3 seconds delay between slides
+                disableOnInteraction: false, // keep autoplay even after user interactions
+            },
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

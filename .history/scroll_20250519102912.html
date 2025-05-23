@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Custom Left Scroll</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Left side custom scrollbar */
+    .left-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .left-scroll::-webkit-scrollbar-track {
+      background: #A0CDCD;
+    }
+
+    .left-scroll::-webkit-scrollbar-thumb {
+      background-color: #2E2F35; 
+      border-radius: 10px;
+    }
+
+    .left-scroll {
+      direction: rtl; 
+    }
+
+    .left-scroll > * {
+      direction: ltr; 
+    }
+  </style>
+</head>
+<body class="bg-[#e8f8f8] p-10">
+
+  <div class="flex space-x-4 h-40">
+    <div class="overflow-y-auto h-full flex w-full left-scroll ">
+      <div class="text-sm text-gray-600 pr-2 w-full">
+        One-off announcements or automatically triggered flows. Customers receive their personalized cards within a week.
+        <br /><br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

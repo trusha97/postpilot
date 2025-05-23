@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Step Accordion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+    /* Carousel styles... (already included above) */
+  </style>
+</head>
+
+<body class="">
+  <div class="container">
+    <div class="carousel-container">
+      <button class="slider-nav prev" id="prev">...</button>
+      <button class="slider-nav next" id="next">...</button>
+      <div class="carousel-wrapper">
+        <div class="carousel">
+          <!-- Carousel slides with data-image-src attributes -->
+        </div>
+      </div>
+      <div class="carousel-scrollbar">
+        <div class="scrollbar-track">
+          <div class="scrollbar-thumb"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const carousel = document.querySelector(".carousel-wrapper");
+      const carouselSlides = document.querySelectorAll(".carousel-slide");
+      const prevBtn = document.getElementById("prev");
+      const nextBtn = document.getElementById("next");
+      const thumb = document.querySelector(".scrollbar-thumb");
+
+      const updateThumb = () => {
+        const scrollRatio = carousel.scrollLeft / (carousel.scrollWidth - carousel.clientWidth);
+        thumb.style.transform = `translateX(${scrollRatio * 100}%)`;
+      };
+
+      const updateButtonVisibility = () => {
+        prevBtn.style.visibility = carousel.scrollLeft <= 0 ? "hidden" : "visible";
+        nextBtn.style.visibility = carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth ? "hidden" : "visible";
+      };
+
+      prevBtn.addEventListener("click", () => {
+        carousel.scrollBy({ left: -160, behavior: "smooth" });
+      });
+
+      nextBtn.addEventListener("click", () => {
+        carousel.scrollBy({ left: 160, behavior: "smooth" });
+      });
+
+      carousel.addEventListener("scroll", () => {
+        updateThumb();
+        updateButtonVisibility();
+      });
+
+      window.addEventListener("resize", updateThumb);
+
+      updateThumb();
+      updateButtonVisibility();
+    });
+  </script>
+</body>
+
+</html>

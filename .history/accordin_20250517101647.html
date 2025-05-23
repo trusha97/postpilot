@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Step Scroll Design</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-cyan-50 flex items-center justify-center min-h-screen">
+
+  <div class="flex items-start">
+
+    <!-- Vertical step number column with line -->
+    <div class="relative flex flex-col items-center space-y-10 pr-4">
+      <!-- Vertical line behind numbers -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-cyan-300"></div>
+
+      <button onclick="showStep(0)" class="step-btn relative z-10 text-cyan-600 text-xl font-mono">01</button>
+      <button onclick="showStep(1)" class="step-btn relative z-10 text-cyan-600 text-xl font-mono">02</button>
+      <button onclick="showStep(2)" class="step-btn relative z-10 text-cyan-600 text-xl font-mono">03</button>
+      <button onclick="showStep(3)" class="step-btn relative z-10 text-cyan-600 text-xl font-mono">04</button>
+    </div>
+
+    <!-- Step Content area -->
+    <div class="flex items-start space-x-4">
+
+      <!-- Vertical line beside paragraph -->
+      <div class="flex justify-center">
+        <div class="w-px bg-cyan-800 h-full"></div>
+      </div>
+
+      <!-- Paragraphs (scrollable when needed, vertically centered) -->
+      <div class="flex items-center max-h-48 overflow-y-auto">
+        <div class="step hidden">
+          <div>
+            <h2 class="text-lg font-semibold text-gray-900">Segment</h2>
+            <p class="text-gray-600 mt-1 max-w-md text-sm">
+              Break your customers into relevant segments for targeted communication. This allows you to tailor your marketing messages more effectively.
+            </p>
+          </div>
+        </div>
+
+        <div class="step hidden">
+          <div>
+            <h2 class="text-lg font-semibold text-gray-900">Design</h2>
+            <p class="text-gray-600 mt-1 max-w-md text-sm">
+              Use beautiful templates to create your card design. Select colors, messages, and branding that match your campaign's tone.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div>
+            <h2 class="text-lg font-semibold text-gray-900">Send</h2>
+            <p class="text-gray-600 mt-1 max-w-md text-sm">
+              One-off announcements or automatically triggered flows. Customers receive their personalized cards within a week. This keeps your customer base informed and engaged at the right time.
+              <br/><br/>More details can be added to test scroll. Add more lines to trigger vertical scroll behavior. This simulates a long paragraph inside a constrained scroll area.
+            </p>
+          </div>
+        </div>
+
+        <div class="step hidden">
+          <div>
+            <h2 class="text-lg font-semibold text-gray-900">Convert</h2>
+            <p class="text-gray-600 mt-1 max-w-md text-sm">
+              Analyze performance metrics and optimize content to boost conversions and customer loyalty over time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function showStep(index) {
+      const steps = document.querySelectorAll('.step');
+      const buttons = document.querySelectorAll('.step-btn');
+
+      steps.forEach((step, i) => {
+        step.classList.toggle('hidden', i !== index);
+      });
+
+      buttons.forEach((btn, i) => {
+        btn.classList.toggle('font-bold', i === index);
+        btn.classList.toggle('text-gray-900', i === index);
+        btn.classList.toggle('text-cyan-600', i !== index);
+      });
+    }
+
+    // Default show step 2
+    document.addEventListener('DOMContentLoaded', () => {
+      showStep(2);
+    });
+  </script>
+
+</body>
+</html>

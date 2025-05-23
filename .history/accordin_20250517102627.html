@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vertical Stepper</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-cyan-50 flex items-center justify-center min-h-screen">
+  <div class="bg-cyan-50 p-6 w-full max-w-md">
+
+    <!-- Steps Container -->
+    <div class="relative border-l-2 border-teal-500 ml-5 space-y-8">
+
+      <!-- Step 1 -->
+      <div class="ml-4 cursor-pointer" onclick="toggleStep(1)">
+        <div class="flex items-center space-x-2">
+          <span class="text-teal-600 font-mono text-lg">01</span>
+          <p class="font-semibold text-gray-700">Segment</p>
+        </div>
+        <div id="desc-1" class="ml-8 mt-2 text-sm text-gray-600 hidden">
+          Group your users based on behavior, interests, or demographics.
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="ml-4 cursor-pointer" onclick="toggleStep(2)">
+        <div class="flex items-center space-x-2">
+          <span class="text-teal-600 font-mono text-lg">02</span>
+          <p class="font-semibold text-gray-700">Design</p>
+        </div>
+        <div id="desc-2" class="ml-8 mt-2 text-sm text-gray-600 hidden">
+          Create visually appealing messages that match your brand style.
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="ml-4 cursor-pointer" onclick="toggleStep(3)">
+        <div class="flex items-center space-x-2">
+          <span class="text-teal-600 font-mono text-lg font-bold">03</span>
+          <p class="font-bold text-gray-900">Send</p>
+        </div>
+        <div id="desc-3" class="ml-8 mt-2 text-sm text-gray-600">
+          One-off announcements or automatically triggered flows. <br />
+          Customers receive their personalized cards within a week.
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="ml-4 cursor-pointer" onclick="toggleStep(4)">
+        <div class="flex items-center space-x-2">
+          <span class="text-teal-600 font-mono text-lg">04</span>
+          <p class="font-semibold text-gray-700">Convert</p>
+        </div>
+        <div id="desc-4" class="ml-8 mt-2 text-sm text-gray-600 hidden">
+          Track conversions and ROI to optimize future campaigns.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleStep(step) {
+      // Hide all descriptions
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('desc-' + i).classList.add('hidden');
+      }
+      // Show selected one
+      document.getElementById('desc-' + step).classList.remove('hidden');
+    }
+
+    // Show step 3 by default
+    toggleStep(3);
+  </script>
+</body>
+
+</html>

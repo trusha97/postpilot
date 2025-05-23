@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.Covered {
+    font-family: "Covered By Your Grace", cursive;
+}
+
+.left-scroll::-webkit-scrollbar {
+    width: 3px;
+}
+
+.left-scroll::-webkit-scrollbar-track {
+    background: #A0CDCD;
+}
+
+.left-scroll::-webkit-scrollbar-thumb {
+    background-color: #2E2F35;
+    border-radius: 10px;
+}
+
+.left-scroll {
+    direction: rtl;
+}
+
+.left-scroll > * {
+    direction: ltr;
+}
+
+/* Highlight for active step */
+.active-step span,
+.active-step p {
+    color: #000000 !important;
+    font-weight: 700;
+}
+
+.inactive-step span,
+.inactive-step p {
+    color: #94a3b8 ; /* Tailwind text-slate-400 */
+    font-weight: 500;
+}
+
+.active-step .Covered {
+    color: #1a1a1a !important; /* dark color for active step */
+    font-weight: 700;
+}
+
+.inactive-step .Covered {
+    color: #b0c4c3 !important; /* light color for inactive step */
+    font-weight: 400;
+}

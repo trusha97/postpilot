@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Logo Carousel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .logo-item img {
+      transition: opacity 0.3s ease, filter 0.3s ease;
+      filter: grayscale(100%);
+      opacity: 0.4;
+    }
+
+    .logo-item.active img {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    .underline-indicator {
+      transition: left 0.3s ease, width 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-[#f5f2fd] flex items-center justify-center min-h-screen px-4">
+
+  <div class="w-full max-w-6xl mx-auto relative">
+    <!-- Carousel Track -->
+    <div id="carousel" class="flex space-x-8 overflow-x-auto pb-4 relative carousel-track">
+      <!-- Logo Items -->
+      <div class="logo-item active shrink-0 cursor-pointer" data-index="0">
+        <img src="Assets/images/obvi.png" class="h-10 md:h-12" alt="Obvi" />
+      </div>
+      <div class="logo-item shrink-0 cursor-pointer" data-index="1">
+        <img src="Assets/images/bulletproof.png" class="h-10 md:h-12" alt="Bulletproof" />
+      </div>
+      <div class="logo-item shrink-0 cursor-pointer" data-index="2">
+        <img src="Assets/images/boom.png" class="h-10 md:h-12" alt="Boom" />
+      </div>
+      <div class="logo-item shrink-0 cursor-pointer" data-index="3">
+        <img src="Assets/images/orbitbaby.png" class="h-10 md:h-12" alt="Orbit Baby" />
+      </div>
+    </div>
+
+    <!-- Underline Indicator -->
+    <div id="underline" class="absolute h-[3px] bg-teal-600 bottom-0 underline-indicator rounded-full" style="left: 0; width: 80px;"></div>
+  </div>
+
+  <!-- <script>
+    const carousel = document.getElementById('carousel');
+    const underline = document.getElementById('underline');
+    const logos = document.querySelectorAll('.logo-item');
+
+    function updateUnderline() {
+      const active = document.querySelector('.logo-item.active');
+      if (!active) return;
+
+      const parentRect = carousel.getBoundingClientRect();
+      const activeRect = active.getBoundingClientRect();
+
+      const offsetLeft = active.offsetLeft - carousel.scrollLeft;
+      underline.style.left = `${offsetLeft}px`;
+      underline.style.width = `${active.offsetWidth}px`;
+    }
+
+    logos.forEach(logo => {
+      logo.addEventListener('click', () => {
+        document.querySelector('.logo-item.active')?.classList.remove('active');
+        logo.classList.add('active');
+        updateUnderline();
+      });
+    });
+
+    window.addEventListener('resize', updateUnderline);
+    carousel.addEventListener('scroll', updateUnderline);
+
+    updateUnderline();
+  </script> -->
+
+
+  <script>
+  const carousel = document.getElementById('carousel');
+  const underline = document.getElementById('underline');
+  const logos = document.querySelectorAll('.logo-item');
+  let currentIndex = 0;
+  let autoScrollInterval;
+
+  function updateUnderline() {
+    const active = document.querySelector('.logo-item.active');
+    if (!active) return;
+
+    const offsetLeft = active.offsetLeft - carousel.scrollLeft;
+    underline.style.left = `${offsetLeft}px`;
+    underline.style.width = `${active.offsetWidth}px`;
+  }
+
+  function setActiveLogo(index) {
+    document.querySelector('.logo-item.active')?.classList.remove('active');
+    logos[index].classList.add('active');
+    currentIndex = index;
+
+    // Scroll to make active logo centered
+    const logo = logos[index];
+    carousel.scrollTo({
+      left: logo.offsetLeft - carousel.clientWidth / 2 + logo.offsetWidth / 2,
+      behavior: 'smooth'
+    });
+
+    updateUnderline();
+  }
+
+  // On logo click
+  logos.forEach((logo, index) => {
+    logo.addEventListener('click', () => {
+      setActiveLogo(index);
+    });
+  });
+
+  // Auto scroll
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+      const nextIndex = (currentIndex + 1) % logos.length;
+      setActiveLogo(nextIndex);
+    }, 3000); // change every 3 seconds
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+  }
+
+  // Start auto scroll on load
+  startAutoScroll();
+
+  // Pause auto-scroll on hover
+  carousel.addEventListener('mouseenter', stopAutoScroll);
+  carousel.addEventListener('mouseleave', startAutoScroll);
+
+  window.addEventListener('resize', updateUnderline);
+  carousel.addEventListener('scroll', updateUnderline);
+
+  // Initial setup
+  updateUnderline();
+</script>
+
+
+</body>
+</html>

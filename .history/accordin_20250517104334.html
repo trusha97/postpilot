@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step Sidebar Accordion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-cyan-50 flex items-center justify-center min-h-screen">
+    <div class="bg-cyan-50 p-6 w-full max-w-md space-y-6" id="accordion">
+
+        <!-- Step 1 -->
+        <div class="cursor-pointer" onclick="toggleStep(1)">
+            <div class="flex items-start space-x-4">
+                <div class="flex flex-col items-center">
+                    <span class="text-teal-600 font-mono text-lg font-bold">01</span>
+
+                </div>
+                <div>
+                    <p class="font-bold text-gray-900">Segment</p>
+                </div>
+            </div>
+            <div class="flex ms-3 items-start space-x-5 ">
+                <div class="w-1 h-9 bg-teal-600 mt-1"></div>
+                <div id="desc-3" class=" text-sm text-gray-600 ">
+                    One-off announcements or automatically triggered flows. Customers receive their personalized cards
+                    within a
+                    week.
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="cursor-pointer" onclick="toggleStep(2)">
+            <div class="flex items-start space-x-4">
+                <div class="flex flex-col items-center">
+                    <span class="text-teal-600 font-mono text-lg font-bold">02</span>
+
+                </div>
+                <div>
+                    <p class="font-bold text-gray-900">Design</p>
+                </div>
+            </div>
+            <div class="flex ms-3 items-start space-x-5 ">
+                <div class="w-1 h-9 bg-teal-600 mt-1"></div>
+                <div id="desc-3" class=" text-sm text-gray-600 ">
+                    One-off announcements or automatically triggered flows. Customers receive their personalized cards
+                    within a
+                    week.
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="cursor-pointer" onclick="toggleStep(3)">
+            <div class="flex items-start space-x-4">
+                <div class="flex flex-col items-center">
+                    <span class="text-teal-600 font-mono text-lg font-bold">03</span>
+
+                </div>
+                <div>
+                    <p class="font-bold text-gray-900">Send</p>
+                </div>
+            </div>
+            <div class="flex ms-3 items-start space-x-5 ">
+                <div class="w-1  bg-teal-600 mt-1"></div>
+                <div id="desc-3" class=" text-sm text-gray-600 ">
+                    One-off announcements or automatically triggered flows. Customers receive their personalized cards
+                    within a
+                    week.One-off announcements or automatically triggered flows. Customers receive their personalized
+                    cards
+                    within a
+                    week.
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Step 4 -->
+        <div class="cursor-pointer" onclick="toggleStep(4)">
+            <div class="flex items-start space-x-4">
+                <div class="flex flex-col items-center">
+                    <span class="text-teal-600 font-mono text-lg font-bold">04</span>
+
+                </div>
+                <div>
+                    <p class="font-bold text-gray-900">Convert</p>
+                </div>
+            </div>
+            <div class="flex ms-3 items-start space-x-5 ">
+                <div class="w-1 h-9 bg-teal-600 mt-1"></div>
+                <div id="desc-3" class=" text-sm text-gray-600 ">
+                    One-off announcements or automatically triggered flows. Customers receive their personalized cards
+                    within a
+                    week.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleStep(step) {
+            // Hide all descriptions first
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById('desc-' + i).classList.add('hidden');
+            }
+            // Show selected
+            document.getElementById('desc-' + step).classList.remove('hidden');
+        }
+
+        // Default open step 3
+        toggleStep(3);
+    </script>
+</body>
+
+</html>

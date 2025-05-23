@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Design Example</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom Scrollbar */
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #94d3ce;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-white p-10">
+
+  <div id="content-1" class="ms-3 mt-2 flex space-x-5 h-28">
+    <!-- Fixed vertical line -->
+    <div class="w-1 bg-gradient-to-b from-teal-500 to-teal-200 rounded-full"></div>
+
+    <!-- Scrollable paragraph -->
+    <div class="overflow-y-auto h-full text-sm text-gray-600 pr-2 custom-scroll w-full">
+      One-off announcements or automatically triggered flows. Customers receive their personalized cards within a week.
+      <br /><br />
+      More dummy text to enable scrolling... <br />
+      More dummy text to enable scrolling... <br />
+      More dummy text to enable scrolling... <br />
+      More dummy text to enable scrolling... <br />
+      More dummy text to enable scrolling... <br />
+      More dummy text to enable scrolling... <br />
+      More dummy text to enable scrolling... <br />
+    </div>
+  </div>
+
+</body>
+</html>

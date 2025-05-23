@@ -1,0 +1,160 @@
+<!-- <!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-poppins overflow-x-hidden">
+  <section class="py-4 w-[613px]">
+    <div id="scrollContainer" class="overflow-x-auto">
+      <div class="flex space-x-8 px-4 min-w-max">
+        <img src="Assets/images/obvi.png" alt="Obvi" class="h-10 flex-shrink-0 opacity-100" />
+        <img src="Assets/images/bulletproof.png" alt="Bulletproof" class="h-10 flex-shrink-0 opacity-40" />
+        <img src="Assets/images/boom.png" alt="Boom" class="h-10 flex-shrink-0 opacity-40" />
+        <img src="Assets/images/orbitbaby.png" alt="OrbitBaby" class="h-10 flex-shrink-0 opacity-40" />
+      </div>
+    </div>
+
+    <div class="mt-2 h-1 w-full bg-gray-200 relative">
+      <div id="scrollProgress" class="absolute left-0 top-0 h-1 bg-teal-500" style="width: 0%;"></div>
+    </div>
+  </section>
+
+  <script>
+    const scrollContainer = document.getElementById('scrollContainer');
+    const scrollProgress = document.getElementById('scrollProgress');
+
+    scrollContainer.addEventListener('scroll', () => {
+      const scrollLeft = scrollContainer.scrollLeft;
+      const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      const scrollPercent = (scrollLeft / maxScrollLeft) * 100;
+      scrollProgress.style.width = `${scrollPercent}%`;
+    });
+  </script>
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Step Accordion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .left-scroll::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    .left-scroll::-webkit-scrollbar-track {
+      background: #A0CDCD;
+    }
+
+    .left-scroll::-webkit-scrollbar-thumb {
+      background-color: #2E2F35;
+      border-radius: 10px;
+    }
+
+    .left-scroll {
+      direction: rtl;
+    }
+
+    .left-scroll>* {
+      direction: ltr;
+    }
+
+    /* Highlight for active step */
+    .active-step span,
+    .active-step p {
+      color: #000000 !important;
+      font-weight: 700;
+    }
+
+    .inactive-step span,
+    .inactive-step p {
+      color: #94a3b8; /* Tailwind text-slate-400 */
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body class="bg-cyan-50 flex items-center justify-center min-h-screen">
+  <div class="container">
+  <div class="carousel-container">
+    <button class="slider-nav prev" id="prev"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M15 6l-6 6l6 6"></path>
+</svg></button>
+    <button class="slider-nav next" id="next"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M9 6l6 6l-6 6"></path>
+</svg></button>
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <div class="carousel-slide" tabindex="0" data-image-src="https://images.unsplash.com/photo-1592493235849-553e2b30d952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2140&q=80">
+        </div>
+        <div class="carousel-slide" tabindex="0" data-image-src="https://images.unsplash.com/photo-1529154179990-c490c5701e52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+        </div>
+        <div class="carousel-slide" tabindex="0" data-image-src="https://images.unsplash.com/photo-1524693359256-077720b70144?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=600&q=60">
+        </div>
+        <div class="carousel-slide" tabindex="0" data-image-src="https://images.unsplash.com/photo-1530311583484-ea8bf4c407fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=600&q=60">
+        </div>
+        <div class="carousel-slide" tabindex="0" data-image-src="https://images.unsplash.com/photo-1577979330904-0363dcd805b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+        </div>
+        <div class="carousel-slide" tabindex="0" data-image-src="https://images.unsplash.com/photo-1543847255-555711da0011?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1997&q=80">
+        </div>
+        <div class="carousel-slide" tabindex="0" data-image-src="https://images.unsplash.com/photo-1579005162638-11c872e1586e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+        </div>
+        <div class="carousel-slide" tabindex="0" data-image-src="https://images.unsplash.com/photo-1554058922-d51b58b707f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+        </div>
+        <div class="carousel-slide" tabindex="0" data-image-src="https://images.unsplash.com/photo-1448318440207-ef1893eb8ac0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2085&q=80">
+        </div>
+        <div class="carousel-slide" tabindex="0" data-image-src="https://images.unsplash.com/photo-1527126887308-6cdf83c7d844?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+        </div>
+        <div class="carousel-slide" tabindex="0" data-image-src="https://images.unsplash.com/photo-1632782532013-bd3f5f9197db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1957&q=80">
+        </div>
+        <div class="carousel-slide" tabindex="0" data-image-src="https://images.unsplash.com/reserve/3waHuaQXRsCuMiUYzARw_IMG_3379.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+        </div>
+      </div>
+    </div>
+    <div class="carousel-scrollbar">
+      <div class="scrollbar-track">
+        <div class="scrollbar-thumb"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    function toggleStep(step) {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('content-' + i).classList.add('hidden');
+
+        const stepDiv = document.querySelector(`[onclick="toggleStep(${i})"]`);
+        stepDiv.classList.remove('active-step');
+        stepDiv.classList.add('inactive-step');
+      }
+
+      document.getElementById('content-' + step).classList.remove('hidden');
+
+      const activeDiv = document.querySelector(`[onclick="toggleStep(${step})"]`);
+      activeDiv.classList.add('active-step');
+      activeDiv.classList.remove('inactive-step');
+    }
+
+    toggleStep(3); // default open step (like your image)
+  </script>
+</body>
+
+</html>

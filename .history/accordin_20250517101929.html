@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steps UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#e6fafa] font-sans p-6">
+
+  <div class="flex gap-8">
+    <!-- Sidebar -->
+    <div class="flex flex-col gap-4 text-lg font-medium text-gray-400">
+      <button onclick="showStep(1)" id="stepBtn1" class="flex gap-2 items-start">
+        <span class="text-teal-400">01</span> <span id="stepText1">Segment</span>
+      </button>
+      <button onclick="showStep(2)" id="stepBtn2" class="flex gap-2 items-start">
+        <span class="text-teal-400">02</span> <span id="stepText2">Design</span>
+      </button>
+      <button onclick="showStep(3)" id="stepBtn3" class="flex gap-2 items-start">
+        <span class="text-teal-400">03</span> <span id="stepText3">Send</span>
+      </button>
+      <button onclick="showStep(4)" id="stepBtn4" class="flex gap-2 items-start">
+        <span class="text-teal-400">04</span> <span id="stepText4">Convert</span>
+      </button>
+    </div>
+
+    <!-- Content Area -->
+    <div class="max-w-md" id="contentArea">
+      <!-- Content will load here -->
+    </div>
+  </div>
+
+  <script>
+    const steps = {
+      1: {
+        title: "Segment",
+        description: "Identify your audience and divide them into relevant groups based on their behavior, preferences, or demographics."
+      },
+      2: {
+        title: "Design",
+        description: "Create personalized and engaging content for your selected customer segments."
+      },
+      3: {
+        title: "Send",
+        description: "One-off announcements or automatically triggered flows. Customers receive their personalized cards within a week."
+      },
+      4: {
+        title: "Convert",
+        description: "Track performance and optimize conversions through follow-ups and data-driven insights."
+      }
+    };
+
+    function showStep(step) {
+      // Reset all styles
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById(`stepText${i}`).classList.remove('text-black', 'font-bold');
+        document.getElementById(`stepText${i}`).classList.add('text-gray-400', 'font-medium');
+      }
+
+      // Highlight selected step
+      document.getElementById(`stepText${step}`).classList.remove('text-gray-400', 'font-medium');
+      document.getElementById(`stepText${step}`).classList.add('text-black', 'font-bold');
+
+      // Update content
+      const { title, description } = steps[step];
+      document.getElementById('contentArea').innerHTML = `
+        <h2 class="text-lg font-bold text-black mb-2">${title}</h2>
+        <p class="text-gray-600">${description}</p>
+      `;
+    }
+
+    // Load default step
+    showStep(3); // Default active is "Send"
+  </script>
+
+</body>
+</html>

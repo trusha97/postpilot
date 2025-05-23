@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Step Sidebar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-cyan-50 flex items-center justify-center min-h-screen">
+
+  <div class="flex flex-col space-y-6">
+
+    <!-- Steps -->
+    <div class="space-y-6">
+      <div class="flex items-start space-x-4">
+        <button onclick="showStep(0)" class="step-btn text-cyan-600 text-xl font-mono">01</button>
+        <div class="step-content hidden">
+          <h2 class="font-semibold text-gray-900">Segment</h2>
+          <p class="text-gray-600 max-w-sm text-sm">Break your customers into relevant segments for targeted communication.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-4">
+        <button onclick="showStep(1)" class="step-btn text-cyan-600 text-xl font-mono">02</button>
+        <div class="step-content hidden">
+          <h2 class="font-semibold text-gray-900">Design</h2>
+          <p class="text-gray-600 max-w-sm text-sm">Design stunning cards for different segments easily using our templates.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-4">
+        <button onclick="showStep(2)" class="step-btn text-cyan-600 text-xl font-mono">03</button>
+        <div class="step-content hidden">
+          <h2 class="font-semibold text-gray-900">Send</h2>
+          <p class="text-gray-600 max-w-sm text-sm">
+            One-off announcements or automatically triggered flows. Customers receive their personalized cards within a week.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-4">
+        <button onclick="showStep(3)" class="step-btn text-cyan-600 text-xl font-mono">04</button>
+        <div class="step-content hidden">
+          <h2 class="font-semibold text-gray-900">Convert</h2>
+          <p class="text-gray-600 max-w-sm text-sm">Track conversions and optimize engagement with real-time analytics.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function showStep(index) {
+      const buttons = document.querySelectorAll('.step-btn');
+      const contents = document.querySelectorAll('.step-content');
+
+      contents.forEach((content, i) => {
+        content.classList.toggle('hidden', i !== index);
+      });
+
+      buttons.forEach((btn, i) => {
+        btn.classList.toggle('font-bold', i === index);
+        btn.classList.toggle('text-gray-900', i === index);
+        btn.classList.toggle('text-cyan-600', i !== index);
+      });
+    }
+
+    // Default to step 2 (index 2)
+    document.addEventListener('DOMContentLoaded', () => {
+      showStep(2);
+    });
+  </script>
+
+</body>
+</html>

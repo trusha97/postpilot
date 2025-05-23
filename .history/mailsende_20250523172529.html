@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mail send</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="Assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+
+<body>
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="Assets/images/logo.png" alt="PostPilot" class="h-6">
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex md:items-center md:space-x-6">
+                    <!-- Resources Dropdown -->
+                    <div class="relative" id="resources-dropdown">
+                        <button id="resources-toggle"
+                            class="inline-flex items-center text-gray-700 text-sm font-medium hover:text-black space-x-1">
+                            <span>Resources</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none"
+                                class="mt-0.5">
+                                <path d="M8.58464 1.8335L5.2513 5.16683L1.91797 1.8335" stroke="#2E2F35"
+                                    stroke-width="1.8" stroke-linecap="square" />
+                            </svg>
+                        </button>
+                        <div id="resources-menu"
+                            class="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg opacity-0 invisible transition-opacity z-20">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Blog</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Guides</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="text-gray-700 text-sm font-medium hover:text-black">Success stories</a>
+
+                    <!-- Company Dropdown (Desktop) -->
+                    <div class="relative hidden lg:block" id="company-dropdown-desktop">
+                        <button id="company-toggle-desktop"
+                            class="inline-flex items-center text-gray-700 text-sm font-medium hover:text-black space-x-1">
+                            <span>Company</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none"
+                                class="mt-0.5">
+                                <path d="M8.58464 1.8335L5.2513 5.16683L1.91797 1.8335" stroke="#2E2F35"
+                                    stroke-width="1.8" stroke-linecap="square" />
+                            </svg>
+                        </button>
+                        <div id="company-menu-desktop"
+                            class="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg opacity-0 invisible transition-opacity z-20">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About Us</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Careers</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="text-gray-700 text-sm font-medium hover:text-black">Pricing</a>
+                </div>
+                <div class="gap-3 hidden lg:flex items-center space-x-4">
+                    <button
+                        class="relative px-5 py-2 rounded-xl border border-2 border-black bg-white text-black font-medium shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] transition">
+                        Login
+                    </button>
+
+                    <button
+                        class="relative px-5 py-2 rounded-xl border border-2 border-black bg-orange-500 text-white font-medium shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] transition">
+                        Create free account
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-toggle" class="text-gray-700 focus:outline-none">
+                        <svg id="icon-open" class="w-6 h-6 block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden  px-4 pb-4 space-y-2">
+            <!-- Resources Mobile Dropdown -->
+            <div class="relative group">
+                <button class="inline-flex items-center text-gray-700 text-sm font-medium hover:text-black space-x-1">
+                    <span>Resources</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none"
+                        class="mt-0.5">
+                        <path d="M8.58464 1.8335L5.2513 5.16683L1.91797 1.8335" stroke="#2E2F35" stroke-width="1.8"
+                            stroke-linecap="square" />
+                    </svg>
+                </button>
+                <div
+                    class="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity invisible group-hover:visible z-20">
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Blog</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Guides</a>
+                </div>
+            </div>
+
+            <a href="#" class="block py-2 text-gray-700 font-medium">Success stories</a>
+
+            <!-- Company Dropdown (Mobile) -->
+            <div class="relative lg:hidden" id="company-dropdown-mobile">
+                <button id="company-toggle-mobile"
+                    class="inline-flex items-center text-gray-700 text-sm font-medium hover:text-black space-x-1">
+                    <span>Company</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none"
+                        class="mt-0.5">
+                        <path d="M8.58464 1.8335L5.2513 5.16683L1.91797 1.8335" stroke="#2E2F35" stroke-width="1.8"
+                            stroke-linecap="square" />
+                    </svg>
+                </button>
+                <div id="company-menu-mobile"
+                    class="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg opacity-0 invisible transition-opacity z-20">
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About Us</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Careers</a>
+                </div>
+            </div>
+
+            <a href="#" class="block py-2 text-gray-700 font-medium">Pricing</a>
+
+            <!-- Buttons -->
+            <div class="space-y-4 mt-2">
+                <button
+                    class="w-full relative px-5 py-2 rounded-xl border border-2 border-black bg-white text-black font-medium shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] transition">
+                    Login
+                </button>
+
+                <button
+                    class="w-full relative px-5 py-2 rounded-xl border border-2 border-black bg-orange-500 text-white font-medium shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] transition">
+                    Create free account
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="flex flex-col justify-center items-center bg-[#FFFFFF] gap-[48px]">
+        <p
+            class="pt-[80px] px-4 sm:px-[60px] lg:px-[120px] text-[30px] sm:text-[40px] lg:text-[63px] font-[700] text-center text-[#2E2F35] leading-tight">
+            Trusted by thousands<br class="hidden sm:inline"> of top DTC
+            <span class="text-[#009387] Covered">brands.</span>
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[40px] sm:gap-[48px] pb-[64px] px-4 sm:px-8">
+            <div class="flex flex-col gap-[32px] justify-center items-center">
+                <img src="Assets/images/rungumimg.png" alt="rungum">
+                <img src="Assets/images/rungumlogo.png" alt="rungum">
+            </div>
+            <div class="flex flex-col gap-[32px] justify-center items-center">
+                <img src="Assets/images/bearabrandimg.png" alt="bearabrand">
+                <img src="Assets/images/rungumlogo.png" alt="bearabrand">
+            </div>
+            <div class="flex flex-col gap-[32px] justify-center items-center">
+                <img src="Assets/images/promiximg.png" alt="promix">
+                <img src="Assets/images/promixlogo.png" alt="promix">
+            </div>
+            <div class="flex flex-col gap-[32px] justify-center items-center">
+                <img src="Assets/images/scotechimg.png" alt="scotech">
+                <img src="Assets/images/scotechlogo.png" class="w-[60px] h-[32px]" alt="scotech">
+            </div>
+        </div>
+    </section>
+
+
+    <div class="bg-[#F3FAFA] py-[96px]">
+        <p
+            class="mx-auto px-4 max-w-[650px] text-[30px] sm:text-[40px] lg:text-[63px] font-[700] text-center text-[#2E2F35]">
+            Why use direct mail? It 
+            <span class="text-[#009387] Covered">works</span>
+            like crazy.
+        </p>
+        <div class="flex flex-wrap justify-center lg:gap-[170px] gap-[60px] mx-auto mt-[58px] ">
+            <div class="w-full sm:w-[45%] md:w-[30%] max-w-[228px] text-center">
+                <h2 class="text-[63px] font-bold text-[#2E2F35] md:text-[50px] sm:text-[30px]">28X</h2>
+                <p class="text-[14px] font-medium text-[#58595D]">
+                    Higher response rate than email<br>& digital
+                </p>
+            </div>
+            <div class="w-full sm:w-[45%] md:w-[30%] max-w-[228px] text-center">
+                <img src="Assets/images/emailmobile.png" class="mx-auto">
+                <p class="text-[14px] font-medium text-[#58595D]">Your messages get read</p>
+            </div>
+            <div class="w-full sm:w-[45%] md:w-[30%] max-w-[228px] text-center">
+                <h2 class="text-[63px] font-bold text-[#2E2F35] md:text-[50px] sm:text-[30px]">17 Days</h2>
+                <p class="text-[14px] font-medium text-[#58595D]">
+                    Lifespan of a postcard vs.<br>seconds for email or SMS
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-[#FDF3EA]">
+        <div class="flex flex-col gap-24 px-4 sm:px-6 md:px-10 lg:px-[75px] py-16">
+            <div class="text-center">
+                <h2
+                    class="font-[700] text-[#2E2F35] text-[24px] sm:text-[30px] md:text-[40px] lg:text-[50px] xl:text-[70px] leading-tight">
+                    PostPilot makes it a <span class="text-[#009387] Covered">cinch</span> to<br>
+                    send personalized, profit-<br>generating postcards.
+                </h2>
+            </div>
+
+
+            <div class="flex flex-col md:flex-row items-start gap-16">
+                <div class="flex flex-col gap-8 max-w-full md:max-w-[600px]">
+                    <h2
+                        class="font-[700] text-[#2E2F35] text-[30px] sm:text-[40px] md:text-[50px] xl:text-[80px] leading-tight tracking-[-2px]">
+                        <span class="text-[#009387] Covered font-[400]">Powerful</span><br>
+                        acquisition <br>& retention
+                    </h2>
+                    <p class="text-[#58595D] text-[16px] sm:text-[18px] md:text-[20px] font-[500]">
+                        Send one-off or triggered campaigns to customers & prospects.<br>
+                        Target email leads with MailMatch™.
+                    </p>
+                    <div class="relative border-2 rounded-[15px] p-6 w-full max-w-[516px]">
+                        <img src="Assets/images/coma.png" class="absolute -top-4 left-6 w-12 h-8" />
+                        <p class="text-[#58595D] text-[14px] sm:text-[16px] font-[500] pt-6">
+                            It’s like Klaviyo for direct mail. The results are absolutely insane.
+                        </p>
+                        <div class="flex justify-between items-center pt-4">
+                            <p class="text-[#A89B90] text-[12px] sm:text-[14px] font-[400]">Ash Melwani, CMO</p>
+                            <img src="Assets/images/obvi.png" alt="Obvi Logo" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flex flex-col md:flex-row-reverse items-start gap-16">
+                <div class="flex flex-col gap-8 max-w-full md:max-w-[600px]">
+                    <h2
+                        class="font-[700] text-[#2E2F35] text-[28px] sm:text-[38px] md:text-[50px] xl:text-[60px] leading-tight tracking-[-2px]">
+                        <span class="text-[#009387] Covered font-[400]">Fight back</span> against iOS <br>
+                        updates, jacked-up CPCs & spam folders
+                    </h2>
+                    <p class="text-[#58595D] text-[16px] sm:text-[18px] md:text-[20px] font-[500]">
+                        Deliver your message to all of your customers — for less than the cost of a click.
+                    </p>
+                    <div class="relative border-2 rounded-[15px] p-6 w-full max-w-[516px]">
+                        <img src="Assets/images/coma.png" class="absolute -top-4 left-6 w-12 h-8" />
+                        <p class="text-[#58595D] text-[14px] sm:text-[16px] font-[500] pt-6">
+                            PostPilot is our new weapon against sinking email engagement and rising PPC costs.
+                            The results and ROI have been outstanding. It’s now one of our core marketing channels
+                            to increase acquisition & LTV.
+                        </p>
+                        <div class="flex justify-between items-center pt-4">
+                            <p class="text-[#A89B90] text-[12px] sm:text-[14px] font-[400]">Leah Keith, GM</p>
+                            <img src="Assets/images/overlanderlogo.png" alt="Overlander Logo" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flex flex-col md:flex-row items-start gap-16">
+                <div class="flex flex-col gap-8 max-w-full md:max-w-[600px]">
+                    <h2
+                        class="font-[700] text-[#2E2F35] text-[28px] sm:text-[38px] md:text-[50px] xl:text-[58px] leading-tight tracking-[-2px]">
+                        Done for <span class="text-[#009387] Covered font-[400]">you</span>
+                    </h2>
+                    <p class="text-[#58595D] text-[16px] sm:text-[18px] md:text-[20px] font-[500]">
+                        From design & strategy to stamp-licking, our ecom experts help you every step of the way.
+                    </p>
+                    <div class="relative border-2 rounded-[15px] p-6 w-full max-w-[516px]">
+                        <img src="Assets/images/coma.png" class="absolute -top-4 left-6 w-12 h-8" />
+                        <p class="text-[#58595D] text-[14px] sm:text-[16px] font-[500] pt-6">
+                            The team is so knowledgeable and beyond helpful.<br>
+                            I’m blown away by their communication, detail, and attentiveness and always feel like
+                            they have
+                            our best interest in mind. Definitely worth a try.
+                        </p>
+                        <div class="flex justify-between items-center pt-4">
+                            <p class="text-[#A89B90] text-[12px] sm:text-[14px] font-[400]">Holly Davies, Marketing
+                                Director
+                            </p>
+                            <img src="Assets/images/parafon.png" alt="Paragon Logo" />
+                        </div>
+                    </div>
+
+
+                    <div class="pt-4 flex justify-center md:justify-start">
+                        <a href="#"
+                            class="inline-block text-center  px-10 py-4 mb-4 bg-[#FF6D2C] text-white font-bold rounded-[15px] shadow-[3px_3px_0px_black]">
+                            Try it RISK-free
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="px-4 sm:px-6 lg:px-[75px] py-[64px] lg:py-[96px] flex flex-col gap-[48px]">
+            <p
+                class="font-[700] text-[28px] sm:text-[36px] md:text-[45px] lg:text-[55px] xl:text-[64px] text-center leading-tight">
+                Everything your brand needs to<br>
+                <span
+                    class="text-[#009387] Covered text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] xl:text-[70px] font-[400]">
+                    make your brand unforgettable
+                </span>
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px]">
+                <div class="bg-[#FDF3EA] p-6 flex flex-col gap-6 rounded-[13px]">
+                    <img src="Assets/images/plug.png" alt="Klaviyo Logo" class="mx-auto">
+                    <div class="text-center flex flex-col gap-2">
+                        <h2 class="text-[20px] md:text-[24px] font-[700] text-[#2E2F35]">Plug-and-play with<br>your
+                            stack
+                        </h2>
+                        <p class="text-[14px] md:text-[16px] font-[400] text-[#2E2F35]">
+                            Native integrations provide seamless segmentation, automation & tracking. No clunky
+                            spreadsheets.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="bg-[#E0F8F2] p-6 flex flex-col gap-6 rounded-[13px]">
+                    <img src="Assets/images/run.png" alt="Cart Icon" class="mx-auto">
+                    <div class="text-center flex flex-col gap-2">
+                        <h2 class="text-[20px] md:text-[24px] font-[700] text-[#2E2F35]">Run campaigns<br>on
+                            autopilot</h2>
+                        <p class="text-[14px] md:text-[16px] font-[400] text-[#2E2F35]">
+                            Ink profits while you sleep: Just set it and forget it.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="bg-[#EEECFF] p-6 flex flex-col gap-6 rounded-[13px]">
+                    <img src="Assets/images/real.png" alt="Graph Icon" class="mx-auto">
+                    <div class="text-center flex flex-col gap-2">
+                        <h2 class="text-[20px] md:text-[24px] font-[700] text-[#2E2F35]">Real-time ROI dashboard
+                        </h2>
+                        <p class="text-[14px] md:text-[16px] font-[400] text-[#2E2F35]">
+                            Track performance of every postcard by customer or discount code. Your CFO will love it.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="bg-[#D9F2F7] p-6 flex flex-col gap-6 rounded-[13px]">
+                    <img src="Assets/images/deliver.png" alt="Robot Handwriting" class="mx-auto">
+                    <div class="text-center flex flex-col gap-2">
+                        <h2 class="text-[20px] md:text-[24px] font-[700] text-[#2E2F35]">Deliver WOW with *real*
+                            handwritten
+                            cards</h2>
+                        <p class="text-[14px] md:text-[16px] font-[400] text-[#2E2F35]">
+                            Our proprietary robots use real pens and ink for an unforgettable VIP touch.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="bg-[#FAEDED] p-6 flex flex-col gap-6 rounded-[13px]">
+                    <img src="Assets/images/predictable.png" alt="Predictable Pricing" class="mx-auto">
+                    <div class="text-center flex flex-col gap-2">
+                        <h2 class="text-[20px] md:text-[24px] font-[700] text-[#2E2F35]">Predictable pricing</h2>
+                        <p class="text-[14px] md:text-[16px] font-[400] text-[#2E2F35]">
+                            Unlike CPCs, postage rates don’t change based on competition or who you’re targeting.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="bg-[#F1F1F1] p-6 flex flex-col gap-6 rounded-[13px]">
+                    <img src="Assets/images/complimentary.png" alt="DSI Icon" class="mx-auto">
+                    <div class="text-center flex flex-col gap-2">
+                        <h2 class="text-[20px] md:text-[24px] font-[700] text-[#2E2F35]">Complimentary concierge
+                            service
+                        </h2>
+                        <p class="text-[14px] md:text-[16px] font-[400] text-[#2E2F35]">
+                            DTC is in our DNA. Our pros will build your strategy and custom designs using
+                            battle-tested best
+                            practices.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="bg-[#E3F8F8] py-[106px]">
+            <p
+                class="font-[700] text-[28px] sm:text-[36px] md:text-[45px] lg:text-[55px] xl:text-[64px] text-center leading-tight">
+                Fast launch. Fast results.<br>
+                <span
+                    class="Covered text-[#009387] Covered text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] xl:text-[70px] font-[400]">
+                    Here's how.
+                </span>
+            </p>
+            <div class="flex items-center">
+                <div class="p-6 w-full space-y-6" id="accordion">
+                    <div class="cursor-pointer inactive-step" onclick="toggleStep(1)">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex flex-col items-center">
+                                <span class="Covered md:text-[36px] text-[26px] font-normal">01</span>
+                            </div>
+                            <div>
+                                <p class="font-bold md:text-[36px] sm:text-[26px] text-[22px]">Segment</p>
+                            </div>
+                        </div>
+                        <div id="content-1" class="hidden ms-2 mt-2 flex space-x-5 h-16 overflow-hidden">
+                            <div class="flex space-x-4 h-16">
+                                <div class="overflow-y-auto h-full flex w-full left-scroll">
+                                    <div
+                                        class="md:text-[20px] sm:text-[16px] text-[14px] font-medium pr-2 w-[350px] ms-6">
+                                        One-off announcements or automatically triggered flows. Customers receive their
+                                        personalized cards within
+                                        a week. One-off announcements or automatically triggered flows. Customers
+                                        receive
+                                        their
+                                        personalized cards within a week.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cursor-pointer inactive-step" onclick="toggleStep(2)">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex flex-col items-center">
+                                <span class="Covered md:text-[36px] text-[26px] font-normal ">02</span>
+                            </div>
+                            <div>
+                                <p class="font-bold md:text-[36px] sm:text-[26px] text-[22px]">Design</p>
+                            </div>
+                        </div>
+                        <div id="content-2" class="hidden ms-2 mt-2 flex space-x-5 h-16 overflow-hidden">
+                            <div class="flex space-x-4 h-16">
+                                <div class="overflow-y-auto h-full flex w-full left-scroll">
+                                    <div
+                                        class="md:text-[20px] sm:text-[16px] text-[14px] font-medium pr-2 w-[350px] ms-6">
+                                        One-off announcements or automatically triggered flows. Customers receive their
+                                        personalized cards within
+                                        a week. One-off announcements or automatically triggered flows. Customers
+                                        receive
+                                        their
+                                        personalized cards within a week.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cursor-pointer inactive-step" onclick="toggleStep(3)">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex flex-col items-center">
+                                <span class=" Covered md:text-[36px] text-[26px] font-normal ">03</span>
+                            </div>
+                            <div>
+                                <p class="font-bold md:text-[36px] sm:text-[26px] text-[22px]">Send</p>
+                            </div>
+                        </div>
+                        <div id="content-3" class="hidden ms-2 mt-2 flex space-x-5 h-16 overflow-hidden">
+                            <div class="flex space-x-4 h-16">
+                                <div class="overflow-y-auto h-full flex w-full left-scroll">
+                                    <div
+                                        class="md:text-[20px] sm:text-[16px] text-[14px] font-medium pr-2 w-[350px] ms-6">
+                                        One-off announcements or automatically triggered flows. Customers receive their
+                                        personalized cards within
+                                        a week. One-off announcements or automatically triggered flows. Customers
+                                        receive
+                                        their
+                                        personalized cards within a week.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cursor-pointer inactive-step" onclick="toggleStep(4)">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex flex-col items-center">
+                                <span class="Covered md:text-[36px] text-[26px] font-normal ">04</span>
+                            </div>
+                            <div>
+                                <p class="font-bold md:text-[36px] sm:text-[26px] text-[22px]">Convert</p>
+                            </div>
+                        </div>
+                        <div id="content-4" class="hidden ms-2 mt-2 flex space-x-5 h-16 overflow-hidden">
+                            <div class="flex space-x-4 h-16">
+                                <div class="overflow-y-auto h-full flex w-full left-scroll">
+                                    <div
+                                        class="md:text-[20px] sm:text-[16px] text-[14px] font-medium pr-2 w-[350px] ms-6">
+                                        One-off announcements or automatically triggered flows. Customers receive their
+                                        personalized cards within
+                                        a week. One-off announcements or automatically triggered flows. Customers
+                                        receive
+                                        their
+                                        personalized cards within a week.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <!-- PostPilot is 🔥 for DTC -->
+        <div class="py-[95px]">
+            <p
+                class="font-[700] text-[28px] sm:text-[36px] md:text-[45px] lg:text-[55px] xl:text-[64px] text-center leading-tight">
+                PostPilot is 🔥 for
+                <span
+                    class="Covered text-[#009387] Covered text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] xl:text-[70px] font-[400]">
+                    DTC
+                </span>
+            </p>
+            <div class="py-16 overflow-x-hidden">
+                <div class="testimonial-slider ">
+                    <div class="slide px-3">
+                        <div class=" bg-white border border-gray-300 rounded-lg p-4 shadow-sm relative ">
+                            <svg class="absolute top-4 right-4 w-5 h-5 text-black" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                            </svg>
+
+                            <div class="flex items-center space-x-3">
+                                <img src="" alt="profile"
+                                    class="w-10 h-10 rounded-full" />
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 leading-tight">Nathan Woods</h4>
+                                    <p class="text-sm text-gray-500">@HeisNathan</p>
+                                </div>
+                            </div>
+
+                            <p class="mt-4 text-gray-700 text-sm">
+                                done some rad winbacks to <br />
+                                days since purchase that have <br />
+                                <strong>PostPilot</strong> team is one of my favs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="slide px-3">
+                        <div class=" bg-white border border-gray-300 rounded-lg p-4 shadow-sm relative ">
+                            <svg class="absolute top-4 right-4 w-5 h-5 text-black" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                            </svg>
+
+                            <div class="flex items-center space-x-3">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="profile"
+                                    class="w-10 h-10 rounded-full" />
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 leading-tight">Nathan Woods</h4>
+                                    <p class="text-sm text-gray-500">@HeisNathan</p>
+                                </div>
+                            </div>
+
+                            <p class="mt-4 text-gray-700 text-sm">
+                                done some rad winbacks to <br />
+                                days since purchase that have <br />
+                                <strong>PostPilot</strong> team is one of my favs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="slide px-3">
+                        <div class=" bg-white border border-gray-300 rounded-lg p-4 shadow-sm relative ">
+                            <svg class="absolute top-4 right-4 w-5 h-5 text-black" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                            </svg>
+
+                            <div class="flex items-center space-x-3">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="profile"
+                                    class="w-10 h-10 rounded-full" />
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 leading-tight">Nathan Woods</h4>
+                                    <p class="text-sm text-gray-500">@HeisNathan</p>
+                                </div>
+                            </div>
+
+                            <p class="mt-4 text-gray-700 text-sm">
+                                done some rad winbacks to <br />
+                                days since purchase that have <br />
+                                <strong>PostPilot</strong> team is one of my favs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="slide px-3">
+                        <div class=" bg-white border border-gray-300 rounded-lg p-4 shadow-sm relative ">
+                            <svg class="absolute top-4 right-4 w-5 h-5 text-black" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                            </svg>
+
+                            <div class="flex items-center space-x-3">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="profile"
+                                    class="w-10 h-10 rounded-full" />
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 leading-tight">Nathan Woods</h4>
+                                    <p class="text-sm text-gray-500">@HeisNathan</p>
+                                </div>
+                            </div>
+
+                            <p class="mt-4 text-gray-700 text-sm">
+                                Another +1 for PostPilot. Have only<br> done winbacks, but it's been wonderful.<br>
+                                Their team
+                                is also top notch. Super helpful <br>every time we set something up.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <button
+                    class="relative text-white font-medium border border-2 border-gray-800 bg-orange-500 px-6 py-2 rounded-xl">
+                    <span
+                        class="absolute inset-0 rounded-xl border-4 border-black translate-x-1 translate-y-1 -z-10"></span>
+                    Try it RISK-free
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#EEECFF] px-6 sm:px-10 md:px-16 lg:px-[75px] py-16 md:py-20 lg:py-[96px]">
+        <div class="flex flex-col lg:flex-row justify-between items-center gap-10 lg:gap-[64px]">
+            <!-- Left image -->
+            <div class="w-full lg:w-1/2 flex justify-center">
+                <img src="Assets/images/obvistudy.png" alt="Good" class="max-w-full h-auto">
+            </div>
+
+
+            <div class="w-full lg:w-1/2 flex flex-col gap-9 text-center lg:text-left">
+                <p
+                    class="font-[700] text-[28px] sm:text-[36px] md:text-[45px] lg:text-[55px] xl:text-[64px] text-center leading-tight">
+                    How
+                    <span
+                        class="Covered text-[#009387] Covered text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] xl:text-[70px] font-[400]">
+                        Obvi
+                    </span>
+                    Drives Profits with Hands-Off Postcard Campaigns
+                </p>
+                <p class="text-[16px] sm:text-[18px] md:text-[20px] font-medium text-[#58595D]">
+                    The 🚀 supplements brand wanted to offset high ad costs and reach dormant customers. They
+                    scored 1000%+ ROIs.
+                </p>
+
+
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-6">
+                    <div>
+                        <h2 class="text-[28px] sm:text-[34px] font-bold text-[#2E2F35]">1468%</h2>
+                        <p class="text-[14px] font-medium text-[#58595D]">ROI</p>
+                    </div>
+                    <div>
+                        <h2 class="text-[28px] sm:text-[34px] font-bold text-[#2E2F35]">8.59%</h2>
+                        <p class="text-[14px] font-medium text-[#58595D]">Conversion Rate</p>
+                    </div>
+                    <div>
+                        <h2 class="text-[28px] sm:text-[34px] font-bold text-[#2E2F35]">$73,457</h2>
+                        <p class="text-[14px] font-medium text-[#58595D]">Sales Generated</p>
+                    </div>
+                </div>
+
+
+                <div class="flex justify-center lg:justify-start">
+                    <a href="#"
+                        class="inline-block py-3 px-10 text-[14px] font-bold text-[#2E2F35] border-2 border-[#2E2F35] rounded-[15px] bg-white shadow-[3px_3px_0px_black]">
+                        Read Case Study
+                    </a>
+                </div>
+
+                <div class=" flex items-center justify-center py-4 px-4">
+                    <div class="w-full max-w-6xl mx-auto relative">
+                        <!-- Carousel Track -->
+                        <div id="carousel" class="flex space-x-8 overflow-x-auto pb-4 relative carousel-track">
+                            <!-- Logo Items -->
+                            <div class="logo-item active shrink-0 cursor-pointer" data-index="0">
+                                <img src="Assets/images/obvi.png" class="h-10 md:h-12" alt="Obvi" />
+                            </div>
+                            <div class="logo-item shrink-0 cursor-pointer" data-index="1">
+                                <img src="Assets/images/bulletproof.png" class="h-10 md:h-12" alt="Bulletproof" />
+                            </div>
+                            <div class="logo-item shrink-0 cursor-pointer" data-index="2">
+                                <img src="Assets/images/boom.png" class="h-10 md:h-12" alt="Boom" />
+                            </div>
+                            <div class="logo-item shrink-0 cursor-pointer" data-index="3">
+                                <img src="Assets/images/orbitbaby.png" class="h-10 md:h-12" alt="Orbit Baby" />
+                            </div>
+                        </div>
+
+                        <!-- Underline Indicator -->
+                        <div id="underline"
+                            class="absolute h-[3px] bg-teal-600 bottom-0 underline-indicator rounded-full"
+                            style="left: 0; width: 80px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-[#FF6D2C]">
+        <div
+            class="main-content flex flex-col-reverse lg:flex-row justify-between items-center px-[20px] lg:px-[40px] gap-[40px] py-[40px]">
+
+
+            <div class="left flex flex-col gap-[17px] text-center lg:text-left">
+                <h1 class="text-[50px] lg:text-[81px] font-[700] text-white leading-tight">
+                    Try PostPilot <br class="hidden lg:block" />Risk-Free
+                </h1>
+
+                <div class="No flex flex-col gap-[32px] items-center lg:items-start">
+                    <p class="text-[16px] lg:text-[20px] font-[500] text-white">
+                        No contracts. No commitments. Guaranteed results.*
+                    </p>
+
+                    <div class="shopify-rating flex flex-col sm:flex-row gap-[20px] sm:gap-[40px] items-center">
+                        <a class="py-[14px] px-[32px] w-[180px] h-[54px] text-[14px] font-[700] text-[#2E2F35] border-2 border-[#2E2F35] rounded-[15px] bg-white shadow-[3px_3px_0px_black] text-center"
+                            href="#">GET STARTED</a>
+                        <img src="images/5-star-shopify.svg" class="w-[150px] sm:w-auto" />
+                    </div>
+
+                    <p class="text-[12px] lg:text-[14px] font-[500] text-white text-center lg:text-left">
+                        *For qualified brands with over $1M annual Shopify revenue.
+                    </p>
+                </div>
+            </div>
+            <img src="images/paw.svg" alt="Paw Graphic"
+                class="w-[200px] sm:w-[300px] md:w-[350px] lg:w-[400px] xl:w-[500px]" />
+        </div>
+    </section>
+
+    <section class="bg-[#F3FAFA] py-[64px] sm:py-[80px] lg:py-[96px]">
+        <div
+            class="main-content px-[16px] sm:px-[32px] lg:px-[75px] flex flex-col gap-[48px] sm:gap-[64px] lg:gap-[74px]">
+
+
+            <div class="top flex flex-col items-center text-center">
+                <h1 class="text-[32px] sm:text-[48px] lg:text-[68px] font-[700] text-[#2E2F35] leading-tight">
+                    Latest trends & <span class="text-[#009387] font-[400] Covered">insights</span>
+                </h1>
+            </div>
+
+
+            <div class="bottom grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+
+
+                <div class="first flex flex-col gap-[20px] items-center text-center sm:items-start sm:text-left">
+                    <img src="images/low-cost.svg" alt="Low Cost Campaigns" class="w-full max-w-[360px]">
+                    <h2 class="text-[20px] sm:text-[22px] lg:text-[26px] font-[700] text-[#2E2F35] leading-snug">
+                        3 Low-Cost Campaigns <br>You Must Run to Win BFCM
+                    </h2>
+                </div>
+
+
+                <div class="second flex flex-col gap-[20px] items-center text-center sm:items-start sm:text-left">
+                    <img src="images/postcard.svg" alt="Postcard Marketing" class="w-full max-w-[360px]">
+                    <h2 class="text-[20px] sm:text-[22px] lg:text-[26px] font-[700] text-[#2E2F35] leading-snug">
+                        Postcard Marketing: The <br> Definitive Guide to High <br>ROI [2022]
+                    </h2>
+                </div>
+
+
+                <div class="third flex flex-col gap-[20px] items-center text-center sm:items-start sm:text-left">
+                    <img src="images/thanks.svg" alt="Thank You Notes" class="w-full max-w-[360px]">
+                    <h2 class="text-[20px] sm:text-[22px] lg:text-[26px] font-[700] text-[#2E2F35] leading-snug">
+                        The Ultimate Guide to Thank <br>You Notes for Ecommerce
+                    </h2>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#FFFFFF]">
+        <div
+            class="main-content px-4 sm:px-8 lg:px-[75px] py-[64px] lg:py-[96px] flex flex-col gap-[64px] lg:gap-[96px]">
+            <div class="top flex flex-col lg:flex-row gap-[48px] lg:gap-[128px]">
+                <div class="flex flex-col gap-[20px] lg:gap-[25px]">
+                    <img src="Assets/images/footerlogo.png" alt="Eco Friendly" class="h-[109px] w-[112px]">
+                    <p class="text-[14px] font-[500] text-[#58595D] leading-[22px]">
+                        Our paper is sourced from FSC-certified mills.<br>
+                        We plant enough trees to more than double our paper usage.
+                    </p>
+                </div>
+
+
+                <div class=" list-company flex flex-col gap-[20px] lg:gap-[27px]">
+                    <h2 class="text-[14px] font-[700] text-[#2E2F35]">Company</h2>
+                    <ul class="text-[16px] font-[500] text-[#2E2F35] space-y-2">
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Partner program</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+
+                <div class=" list-company flex flex-col gap-[20px] lg:gap-[27px]">
+                    <h2 class="text-[14px] font-[700] text-[#2E2F35]">About</h2>
+                    <ul class="text-[16px] font-[500] text-[#2E2F35] space-y-2">
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="#">Direct Mail Academy</a></li>
+                        <li><a href="#">Success stories</a></li>
+                        <li><a href="#">Terms & conditions</a></li>
+                    </ul>
+                </div>
+                <div class=" flex flex-col gap-[20px] lg:gap-[27px]">
+                    <h2 class="text-[12px] font-[700] text-[#2E2F35]">Contact</h2>
+                    <p class="text-[15px] font-[500] text-[#2E2F35]">
+                        <a href="mailto:support@postpilot.com">support@postpilot.com</a>
+                    </p>
+                    <p class="text-[15px] font-[700] text-[#58595D] leading-[22px]">
+                        Printed with ❤️ at our facility in<br class="hidden sm:inline"> South Carolina.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class=" flex  justify-between items-center">
+                <div class="left flex flex-col items-center sm:items-start gap-[9px] text-center sm:text-left">
+                    <img src="Assets/images/logo.png" class="h-[24px] w-[130px]" alt="Logo">
+                    <p class="text-[14px] text-[#2E2F35]">© 2022 PostPilot, Inc. All rights reserved.</p>
+                </div>
+                <div class="right flex flex-col sm:flex-row gap-[12px] sm:gap-[16px]">
+                    <a class=" py-[13px] px-[22px] w-full sm:w-[83px] h-[44px] text-[14px] font-[500] text-[#2E2F35] border border-[2px] border-[#2E2F35] rounded-[12px] bg-[#FFFFFF] shadow-[3px_3px_0px_black] text-center"
+                        href="#">Login</a>
+                    <a class=" py-[13px] px-[22px] w-full sm:w-[137px] h-[44px] text-[14px] font-[500] text-[#FFFFFF] border border-[2px] border-[#2E2F35] rounded-[12px] bg-[#FF6D2C] shadow-[3px_3px_0px_black] text-center"
+                        href="#">Try it for free</a>
+                </div>
+                <!-- <div class="space-y-4 mt-2 flex gap-[20px]">
+                <button
+                    class="w-full relative px-5 py-2 rounded-xl border border-2 border-black bg-white text-black font-medium shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] transition">
+                    Login
+                </button>
+
+                <button
+                    class="w-full relative px-5 py-2 rounded-xl border border-2 border-black bg-orange-500 text-white font-medium shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] transition">
+                    Create free account
+                </button>
+            </div> -->
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        //============================= header script start ====================================
+        const toggleBtn = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+
+        toggleBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        });
+
+        const resourcesToggle = document.getElementById('resources-toggle');
+        const resourcesMenu = document.getElementById('resources-menu');
+        resourcesToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isVisible = resourcesMenu.classList.contains('opacity-100');
+            resourcesMenu.classList.toggle('opacity-100', !isVisible);
+            resourcesMenu.classList.toggle('visible', !isVisible);
+            resourcesMenu.classList.toggle('opacity-0', isVisible);
+            resourcesMenu.classList.toggle('invisible', isVisible);
+        });
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('resources-dropdown').contains(e.target)) {
+                resourcesMenu.classList.remove('opacity-100', 'visible');
+                resourcesMenu.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        const companyToggleDesktop = document.getElementById('company-toggle-desktop');
+        const companyMenuDesktop = document.getElementById('company-menu-desktop');
+        companyToggleDesktop.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isVisible = companyMenuDesktop.classList.contains('opacity-100');
+            companyMenuDesktop.classList.toggle('opacity-100', !isVisible);
+            companyMenuDesktop.classList.toggle('visible', !isVisible);
+            companyMenuDesktop.classList.toggle('opacity-0', isVisible);
+            companyMenuDesktop.classList.toggle('invisible', isVisible);
+        });
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('company-dropdown-desktop').contains(e.target)) {
+                companyMenuDesktop.classList.remove('opacity-100', 'visible');
+                companyMenuDesktop.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        const companyToggleMobile = document.getElementById('company-toggle-mobile');
+        const companyMenuMobile = document.getElementById('company-menu-mobile');
+        companyToggleMobile.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isVisible = companyMenuMobile.classList.contains('opacity-100');
+            companyMenuMobile.classList.toggle('opacity-100', !isVisible);
+            companyMenuMobile.classList.toggle('visible', !isVisible);
+            companyMenuMobile.classList.toggle('opacity-0', isVisible);
+            companyMenuMobile.classList.toggle('invisible', isVisible);
+        });
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('company-dropdown-mobile').contains(e.target)) {
+                companyMenuMobile.classList.remove('opacity-100', 'visible');
+                companyMenuMobile.classList.add('opacity-0', 'invisible');
+            }
+        });
+        //======================= header script end =====================
+
+        //======================== accodian start =======================
+        function toggleStep(step) {
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById('content-' + i).classList.add('hidden');
+
+                const stepDiv = document.querySelector(`[onclick="toggleStep(${i})"]`);
+                stepDiv.classList.remove('active-step');
+                stepDiv.classList.add('inactive-step');
+            }
+            document.getElementById('content-' + step).classList.remove('hidden');
+            const activeDiv = document.querySelector(`[onclick="toggleStep(${step})"]`);
+            activeDiv.classList.add('active-step');
+            activeDiv.classList.remove('inactive-step');
+        }
+        toggleStep(3);
+        //======================== accodian end =========================
+
+
+
+        //======================= slider start ==========================
+        $(document).ready(function () {
+            $('.testimonial-slider').slick({
+                slidesToShow: 2,
+                centerMode: true,
+                centerPadding: '250px',
+                dots: false,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            centerPadding: '60px'
+                        }
+                    },
+                    {
+                        breakpoint: 640,
+                        settings: {
+                            slidesToShow: 2,
+                            centerPadding: '20px'
+                        }
+                    },
+                    {
+                        breakpoint: 425,
+                        settings: {
+                            slidesToShow: 1,
+                            centerMode: false,
+                            centerPadding: '0px'
+                        }
+                    }
+                ]
+            });
+        });
+        //======================= slider end ============================
+
+        //======================= logo slider start============================
+        const carousel = document.getElementById('carousel');
+        const underline = document.getElementById('underline');
+        const logos = document.querySelectorAll('.logo-item');
+        let currentIndex = 0;
+        let autoScrollInterval;
+
+        function updateUnderline() {
+            const active = document.querySelector('.logo-item.active');
+            if (!active) return;
+
+            const offsetLeft = active.offsetLeft - carousel.scrollLeft;
+            underline.style.left = `${offsetLeft}px`;
+            underline.style.width = `${active.offsetWidth}px`;
+        }
+
+        function setActiveLogo(index) {
+            document.querySelector('.logo-item.active')?.classList.remove('active');
+            logos[index].classList.add('active');
+            currentIndex = index;
+
+            const logo = logos[index];
+            carousel.scrollTo({
+                left: logo.offsetLeft - carousel.clientWidth / 2 + logo.offsetWidth / 2,
+                behavior: 'smooth'
+            });
+
+            updateUnderline();
+        }
+
+        logos.forEach((logo, index) => {
+            logo.addEventListener('click', () => {
+                setActiveLogo(index);
+            });
+        });
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                const nextIndex = (currentIndex + 1) % logos.length;
+                setActiveLogo(nextIndex);
+            }, 3000);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        startAutoScroll();
+
+        carousel.addEventListener('mouseenter', stopAutoScroll);
+        carousel.addEventListener('mouseleave', startAutoScroll);
+
+        window.addEventListener('resize', updateUnderline);
+        carousel.addEventListener('scroll', updateUnderline);
+
+        updateUnderline();
+        //======================= logo slider end============================
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Step Accordion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  .left-scroll::-webkit-scrollbar {
+    width: 2px; /* Total space: 3px thumb + 1px track effect */
+  }
+
+  .left-scroll::-webkit-scrollbar-track {
+    background-color: transparent; /* Transparent so only thumb border shows */
+  }
+
+  .left-scroll::-webkit-scrollbar-thumb {
+    background-color: #2E2F35; /* Thumb color */
+    border-radius: 10px;
+    border-left: 1px solid #D8F4F4; /* 1px track illusion */
+    width:2px; /* Thumb width including border will be 3px visually */
+  }
+
+  .left-scroll {
+    direction: rtl;
+  }
+
+  .left-scroll > * {
+    direction: ltr;
+  }
+</style>
+
+
+  </style>
+</head>
+
+<body class="bg-cyan-50 flex items-center justify-center min-h-screen">
+  <div class="bg-cyan-50 p-6 w-full max-w-md space-y-6" id="accordion">
+    <div class="cursor-pointer" onclick="toggleStep(1)">
+      <div class="flex items-start space-x-4">
+        <div class="flex flex-col items-center">
+          <span class="text-teal-600 font-mono text-lg font-bold">01</span>
+        </div>
+        <div>
+          <p class="font-bold text-gray-900">Segment</p>
+        </div>
+      </div>
+      <div id="content-1" class="hidden ms-2 mt-2 flex space-x-5 h-16 overflow-hidden">
+        <div class="flex space-x-4 h-16">
+          <div class="overflow-y-auto h-full flex w-full left-scroll ">
+            <div class="text-sm text-gray-600 pr-2 w-[300px] ms-5">
+              One-off announcements or automatically triggered flows. Customers receive their personalized cards within
+              a week.One-off announcements or automatically triggered flows. Customers receive their personalized cards
+              within a week.One-off announcements or automatically triggered flows. Customers receive their personalized
+              cards within a week.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cursor-pointer" onclick="toggleStep(2)">
+      <div class="flex items-start space-x-4">
+        <div class="flex flex-col items-center">
+          <span class="text-teal-600 font-mono text-lg font-bold">02</span>
+        </div>
+        <div>
+          <p class="font-bold text-gray-900">Design</p>
+        </div>
+      </div>
+      <div id="content-2" class="hidden ms-2 mt-2 flex space-x-5 h-16 overflow-hidden">
+        <div class="flex space-x-4 h-16">
+          <div class="overflow-y-auto h-full flex w-full left-scroll ">
+            <div class="text-sm text-gray-600 pr-2 w-[300px] ms-5">
+              One-off announcements or automatically triggered flows. Customers receive their personalized cards within
+              a week.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cursor-pointer" onclick="toggleStep(3)">
+      <div class="flex items-start space-x-4">
+        <div class="flex flex-col items-center">
+          <span class="text-teal-600 font-mono text-lg font-bold">03</span>
+        </div>
+        <div>
+          <p class="font-bold text-gray-900">Send</p>
+        </div>
+      </div>
+      <div id="content-3" class="hidden ms-2 mt-2 flex space-x-5 h-16 overflow-hidden">
+        <div class="flex space-x-4 h-16">
+          <div class="overflow-y-auto h-full flex w-full left-scroll ">
+            <div class="text-sm text-gray-600 pr-2 w-[300px] ms-5">
+              One-off announcements or automatically triggered flows. Customers receive their personalized cards within
+              a week.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cursor-pointer" onclick="toggleStep(4)">
+      <div class="flex items-start space-x-4">
+        <div class="flex flex-col items-center">
+          <span class="text-teal-600 font-mono text-lg font-bold">04</span>
+        </div>
+        <div>
+          <p class="font-bold text-gray-900">Convert</p>
+        </div>
+      </div>
+      <div id="content-4" class="hidden ms-2 mt-2 flex space-x-5 h-16 overflow-hidden">
+        <div class="flex space-x-4 h-16">
+          <div class="overflow-y-auto h-full flex w-full left-scroll ">
+            <div class="text-sm text-gray-600 pr-2 w-[300px] ms-5">
+              One-off announcements or automatically triggered flows. Customers receive their personalized cards within
+              a week.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleStep(step) {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('content-' + i).classList.add('hidden');
+      }
+      document.getElementById('content-' + step).classList.remove('hidden');
+    }
+    toggleStep(2);
+  </script>
+</body>
+
+</html>

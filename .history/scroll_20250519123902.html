@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind Testimonial Slider</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .slide {
+      display: none;
+    }
+    .slide.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- Title -->
+  <div class="text-center py-8">
+    <h2 class="text-3xl font-bold">
+      PostPilot is <span class="text-red-500">🔥</span> for <span class="text-teal-500 font-semibold">DTC</span>
+    </h2>
+  </div>
+
+  <section class="py-16 bg-cover bg-center bg-no-repeat"
+			style="background-image: url('Assets/image/Whatpeoplesay.png');">
+			<div class="py-16"
+				<div class="testimonial-slider ">
+					<!-- Card 1 -->
+					<div class="slide px-3">
+						<div class="max-w-3xl bg-white rounded-2xl shadow-md overflow-hidden flex">
+							<div class="w-1/2  h-80 md:h-auto">
+								<img src="Assets/image/sliimg.png" alt="Charlie Johnson"
+									class="w-full h-full object-cover">
+							</div>
+							<div class="w-1/2 p-6 flex flex-col justify-center space-y-4">
+								<div>
+									<p class="text-4xl font-bold text-gray-900">5.0 <span
+											class="text-lg font-medium text-gray-500">stars</span></p>
+									<div class="flex space-x-1 text-yellow-400 text-xl">
+										<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+									</div>
+								</div>
+								<p class="text-gray-700 text-base">“I feel very secure when using caretall's services.
+									Your
+									customer care team is very enthusiastic and the driver is always on time.”</p>
+								<div>
+									<p class="font-semibold text-gray-900 text-lg">Charlie Johnson</p>
+									<p class="text-sm text-gray-500">From New York, US</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 2 -->
+					<div class="slide px-3">
+						<div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden flex">
+							<div class="w-1/2 h-80 md:h-auto">
+								<img src="Assets/image/sliimg.png" alt="Charlie Johnson"
+									class="w-full h-full object-cover">
+							</div>
+							<div class="w-1/2 p-6 flex flex-col justify-center space-y-4">
+								<div>
+									<p class="text-4xl font-bold text-gray-900">5.0 <span
+											class="text-lg font-medium text-gray-500">stars</span></p>
+									<div class="flex space-x-1 text-yellow-400 text-xl">
+										<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+									</div>
+								</div>
+								<p class="text-gray-700 text-base">“I feel very secure when using caretall's services.
+									Your
+									customer care team is very enthusiastic and the driver is always on time.”</p>
+								<div>
+									<p class="font-semibold text-gray-900 text-lg">Charlie Johnson</p>
+									<p class="text-sm text-gray-500">From New York, US</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 3 -->
+					<div class="slide px-3">
+						<div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden flex">
+							<div class="w-1/2 h-80 md:h-auto">
+								<img src="Assets/image/sliimg.png" alt="Charlie Johnson"
+									class="w-full h-full object-cover">
+							</div>
+							<div class="w-1/2 p-6 flex flex-col justify-center space-y-4">
+								<div>
+									<p class="text-4xl font-bold text-gray-900">5.0 <span
+											class="text-lg font-medium text-gray-500">stars</span></p>
+									<div class="flex space-x-1 text-yellow-400 text-xl">
+										<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+									</div>
+								</div>
+								<p class="text-gray-700 text-base">“I feel very secure when using caretall's services.
+									Your
+									customer care team is very enthusiastic and the driver is always on time.”</p>
+								<div>
+									<p class="font-semibold text-gray-900 text-lg">Charlie Johnson</p>
+									<p class="text-sm text-gray-500">From New York, US</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+  <!-- Script -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === index) {
+          slide.classList.add("active");
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    // Auto Slide Every 4 Seconds
+    setInterval(() => {
+      nextSlide();
+    }, 4000);
+  </script>
+
+</body>
+</html>

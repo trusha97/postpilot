@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind Testimonial Slider</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .slide {
+      display: none;
+    }
+    .slide.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- Title -->
+  <div class="text-center py-8">
+    <h2 class="text-3xl font-bold">
+      PostPilot is <span class="text-red-500">🔥</span> for <span class="text-teal-500 font-semibold">DTC</span>
+    </h2>
+  </div>
+
+  <!-- Slider Container -->
+  <div class="relative w-full max-w-4xl mx-auto">
+    <div id="slider" class="flex overflow-hidden">
+      
+      <!-- Slide 1 -->
+      <div class="slide active w-full px-4">
+        <div class="border rounded-lg p-4 shadow-md max-w-sm mx-auto h-48 flex flex-col justify-between">
+          <p class="text-sm text-gray-700">"We've used PostPilot for years. Good for retargeting and creative messaging."</p>
+          <div class="flex items-center justify-between mt-4">
+            <div class="flex items-center space-x-2">
+              <img src="https://randomuser.me/api/portraits/women/1.jpg" class="w-8 h-8 rounded-full" />
+              <div>
+                <p class="text-sm font-semibold">Helen Guo</p>
+                <p class="text-xs text-gray-500">@HelenGuo</p>
+              </div>
+            </div>
+            <img src="https://img.icons8.com/ios-glyphs/30/twitter.png" class="w-5 h-5" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide w-full px-4">
+        <div class="border rounded-lg p-4 shadow-md max-w-sm mx-auto h-48 flex flex-col justify-between">
+          <p class="text-sm text-gray-700">"PostPilot helped us recover many winbacks. Great support team!"</p>
+          <div class="flex items-center justify-between mt-4">
+            <div class="flex items-center space-x-2">
+              <img src="https://randomuser.me/api/portraits/men/2.jpg" class="w-8 h-8 rounded-full" />
+              <div>
+                <p class="text-sm font-semibold">Nathan Woods</p>
+                <p class="text-xs text-gray-500">@NateW</p>
+              </div>
+            </div>
+            <img src="https://img.icons8.com/ios-glyphs/30/twitter.png" class="w-5 h-5" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide w-full px-4">
+        <div class="border rounded-lg p-4 shadow-md max-w-sm mx-auto h-48 flex flex-col justify-between">
+          <p class="text-sm text-gray-700">"+1 for PostPilot. Great experience and simple to get started!"</p>
+          <div class="flex items-center justify-between mt-4">
+            <div class="flex items-center space-x-2">
+              <img src="https://randomuser.me/api/portraits/men/3.jpg" class="w-8 h-8 rounded-full" />
+              <div>
+                <p class="text-sm font-semibold">Chris Lander</p>
+                <p class="text-xs text-gray-500">@chris_basis</p>
+              </div>
+            </div>
+            <img src="https://img.icons8.com/ios-glyphs/30/twitter.png" class="w-5 h-5" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="flex justify-center mt-6 space-x-4">
+      <button onclick="prevSlide()" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">⟨</button>
+      <button onclick="nextSlide()" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">⟩</button>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === index) {
+          slide.classList.add("active");
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    // Auto Slide Every 4 Seconds
+    setInterval(() => {
+      nextSlide();
+    }, 4000);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Centered Slick Slider</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <style>
+    .testimonial-slider .slick-slide {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 py-10">
+
+  <div class="  px-4">
+    <div class="testimonial-slider">
+      
+      <!-- Slide 1 -->
+      <div class="slide px-4 w-[410px]">
+        <div class="max-w-[410px] mx-auto bg-white border border-gray-300 rounded-lg p-4 shadow-sm relative">
+          <p class="text-sm text-gray-700">“This is a sample testimonial. It looks good.”</p>
+          <div class="text-right mt-2 text-sm text-gray-500">- User 1</div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide px-4 w-[410px]">
+        <div class="max-w-[410px] mx-auto bg-white border border-gray-300 rounded-lg p-4 shadow-sm relative">
+          <p class="text-sm text-gray-700">“Second testimonial here with some nice words.”</p>
+          <div class="text-right mt-2 text-sm text-gray-500">- User 2</div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide px-4 w-[410px]">
+        <div class="max-w-[410px] mx-auto bg-white border border-gray-300 rounded-lg p-4 shadow-sm relative">
+          <p class="text-sm text-gray-700">“Third card example for testing.”</p>
+          <div class="text-right mt-2 text-sm text-gray-500">- User 3</div>
+        </div>
+      </div>
+
+       <div class="slide px-4 w-[410px]">
+        <div class="max-w-[410px] mx-auto bg-white border border-gray-300 rounded-lg p-4 shadow-sm relative">
+          <p class="text-sm text-gray-700">“Third card example for testing.”</p>
+          <div class="text-right mt-2 text-sm text-gray-500">- User 3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery & Slick Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+     $('.testimonial-slider').slick({
+  slidesToShow: 2,
+  centerMode: true,
+  centerPadding: '100px', // 100px left & right space to show half cards
+  dots: false,
+  arrows: false,
+  autoplay: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        centerMode: true,
+        centerPadding: '60px'
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        centerMode: true,
+        centerPadding: '30px'
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        centerMode: true,
+        centerPadding: '15px'
+      }
+    }
+  ]
+});
+
+    });
+  </script>
+</body>
+</html>

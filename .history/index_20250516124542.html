@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PostPilot Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+        }
+    </style>
+</head>
+
+<body class="">
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="Assets/images/logo.png" alt="PostPilot" class="h-6">
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex md:items-center md:space-x-6">
+                    <!-- Resources Dropdown -->
+                    <div class="relative" id="resources-dropdown">
+                        <button id="resources-toggle"
+                            class="inline-flex items-center text-gray-700 text-sm font-medium hover:text-black space-x-1">
+                            <span>Resources</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none"
+                                class="mt-0.5">
+                                <g clip-path="url(#clip0_2_6887)">
+                                    <path d="M8.58464 1.8335L5.2513 5.16683L1.91797 1.8335" stroke="#2E2F35"
+                                        stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="square" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2_6887">
+                                        <rect width="10" height="6" fill="white" transform="translate(0.25 0.5)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                        <div id="resources-menu"
+                            class="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg opacity-0 invisible transition-opacity z-20">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Blog</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Guides</a>
+                        </div>
+                    </div>
+
+
+
+                    <a href="#" class="text-gray-700 text-sm font-medium hover:text-black">Success stories</a>
+
+                    <!-- <div class="relative group">
+                        <button
+                            class="inline-flex items-center text-gray-700 text-sm font-medium hover:text-black space-x-1">
+                            <span>Company</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none"
+                                class="mt-0.5">
+                                <g clip-path="url(#clip0_2_6887)">
+                                    <path d="M8.58464 1.8335L5.2513 5.16683L1.91797 1.8335" stroke="#2E2F35"
+                                        stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="square" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2_6887">
+                                        <rect width="10" height="6" fill="white" transform="translate(0.25 0.5)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity invisible group-hover:visible z-20">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"></a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Careers</a>
+                        </div>
+                    </div> -->
+
+                    <div class="relative" id="company-dropdown-desktop">
+                <button id="company-toggle-desktop"
+                    class="inline-flex items-center text-gray-700 text-sm font-medium hover:text-black space-x-1">
+                    <span>Company</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none"
+                        class="mt-0.5">
+                        <g clip-path="url(#clip0_2_6887)">
+                            <path d="M8.58464 1.8335L5.2513 5.16683L1.91797 1.8335" stroke="#2E2F35" stroke-width="1.8"
+                                stroke-miterlimit="10" stroke-linecap="square" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_2_6887">
+                                <rect width="10" height="6" fill="white" transform="translate(0.25 0.5)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </button>
+                <div id="company-menu-desktop"
+                    class="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg opacity-0 invisible transition-opacity z-20">
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About Us</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Careers</a>
+                </div>
+            </div>
+
+                    <a href="#" class="text-gray-700 text-sm font-medium hover:text-black">Pricing</a>
+                </div>
+
+                <!-- Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#"
+                        class="px-4 py-2 text-sm font-medium text-black border border-black rounded-full hover:bg-gray-100">Login</a>
+                    <a href="#"
+                        class="px-4 py-2 text-sm font-medium text-white bg-orange-500 hover:bg-orange-600 rounded-full">Create
+                        free account</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-toggle" class="text-gray-700 focus:outline-none">
+                        <svg id="icon-open" class="w-6 h-6 block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
+            <!-- Resources Mobile Dropdown -->
+            <div class="relative group">
+                <button class="inline-flex items-center text-gray-700 text-sm font-medium hover:text-black space-x-1">
+                    <span>Resources</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none"
+                        class="mt-0.5">
+                        <g clip-path="url(#clip0_2_6887)">
+                            <path d="M8.58464 1.8335L5.2513 5.16683L1.91797 1.8335" stroke="#2E2F35" stroke-width="1.8"
+                                stroke-miterlimit="10" stroke-linecap="square" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_2_6887">
+                                <rect width="10" height="6" fill="white" transform="translate(0.25 0.5)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </button>
+                <div
+                    class="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity invisible group-hover:visible z-20">
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Blog</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Guides</a>
+                </div>
+            </div>
+
+            <a href="#" class="block py-2 text-gray-700 font-medium">Success stories</a>
+
+            <!-- Company Mobile Dropdown -->
+            <!-- Company Dropdown (desktop) -->
+            <div class="relative" id="company-dropdown-desktop">
+                <button id="company-toggle-desktop"
+                    class="inline-flex items-center text-gray-700 text-sm font-medium hover:text-black space-x-1">
+                    <span>Company</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none"
+                        class="mt-0.5">
+                        <g clip-path="url(#clip0_2_6887)">
+                            <path d="M8.58464 1.8335L5.2513 5.16683L1.91797 1.8335" stroke="#2E2F35" stroke-width="1.8"
+                                stroke-miterlimit="10" stroke-linecap="square" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_2_6887">
+                                <rect width="10" height="6" fill="white" transform="translate(0.25 0.5)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </button>
+                <div id="company-menu-desktop"
+                    class="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg opacity-0 invisible transition-opacity z-20">
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About Us</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Careers</a>
+                </div>
+            </div>
+
+
+
+            <a href="#" class="block py-2 text-gray-700 font-medium">Pricing</a>
+
+            <!-- Buttons -->
+            <div class="space-y-2 mt-2">
+                <a href="#"
+                    class="block w-full text-center px-4 py-2 border border-black rounded-full text-black font-medium">Login</a>
+                <a href="#"
+                    class="block w-full text-center px-4 py-2 bg-orange-500 text-white rounded-full font-medium">Create
+                    free account</a>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        // Mobile menu toggle (already present)
+        const toggleBtn = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+
+        toggleBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        });
+
+        // Resources Dropdown (Desktop)
+        const resourcesToggle = document.getElementById('resources-toggle');
+        const resourcesMenu = document.getElementById('resources-menu');
+        resourcesToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isVisible = resourcesMenu.classList.contains('opacity-100');
+            resourcesMenu.classList.toggle('opacity-100', !isVisible);
+            resourcesMenu.classList.toggle('visible', !isVisible);
+            resourcesMenu.classList.toggle('opacity-0', isVisible);
+            resourcesMenu.classList.toggle('invisible', isVisible);
+        });
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('resources-dropdown').contains(e.target)) {
+                resourcesMenu.classList.remove('opacity-100', 'visible');
+                resourcesMenu.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+
+    </script>
+
+</body>
+
+</html>

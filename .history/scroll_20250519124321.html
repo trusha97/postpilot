@@ -1,0 +1,285 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+		integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer">
+	<link rel="stylesheet" href="./Assets/css/mainstyle.css">
+	<script src="https://cdn.tailwindcss.com"></script>
+
+	<!-- Slick CSS -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<!-- Slick JS -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+</head>
+
+<body class="font-poppins overflow-x-hidden">
+	<div class="">
+		<div class="relative">
+			<header class="w-full">
+				<div class="p-4 md:p-6 lg:pt-8 lg:px-8 xl:pt-10 xl:px-[160px]">
+					<div class="flex justify-between items-center">
+						<div>
+							<img src="Assets/image/logo.png" alt="Company Logo" class="h-9 w-auto" />
+						</div>
+
+						<button id="menuToggle" class="block lg:hidden">
+							<i class="fa-solid fa-bars"></i>
+						</button>
+
+						<nav class="hidden lg:block">
+							<ul class="flex text-[15px] font-medium gap-6 xl:gap-10">
+								<li><a href="#" class="hover:text-[#1572D3]">Become a renter</a></li>
+								<li><a href="#" class="hover:text-[#1572D3]">Rental deals</a></li>
+								<li><a href="#" class="hover:text-[#1572D3]">How it works</a></li>
+								<li><a href="#" class="hover:text-[#1572D3]">Why choose us</a></li>
+							</ul>
+						</nav>
+
+						<!-- Auth buttons: hidden below lg, shown from lg up -->
+						<div class="hidden lg:flex items-center gap-4">
+							<button class="hover:text-[#1572D3]">Sign in</button>
+							<button class="py-2 px-4 bg-[#1572D3] text-white rounded-lg hover:bg-[#135fb0]">Sign
+								Up</button>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div
+				class="flex flex-col-reverse lg:flex-row items-center justify-between ps-[15px] md:ps-[50px] xl:ps-[145px] pt-14">
+				<div class="lg:w-1/2 text-left">
+					<h1 class="text-4xl md:text-5xl font-semibold text-[#242424]  lg:max-w-[345px] max-w-full">
+						Find, book and rent a car <span class="text-[#1572D3] relative inline-block">Easily
+							<img src="Assets/image/bannerline.png" class="absolute -bottom-5 left-0 w-full"
+								alt="underline" />
+						</span>
+					</h1>
+					<p class="mt-6 text-lg text-[#272727] leading-relaxed lg:max-w-[390px]  max-w-full">
+						Get a car wherever and whenever you need it with your IOS and Android device.
+					</p>
+					<div class="mt-6 md:flex none gap-4">
+						<img src="Assets/image/google.png" alt="Play Store" class="pb-4 md:pb-0 " />
+						<img src="Assets/image/appstore.png" alt="App Store" class=" " />
+					</div>
+				</div>
+
+				<div class="lg:w-1/2 relative mb-12 lg:mb-0">
+					<img src="Assets/image/bannerbg2.png" alt="Car" class="w-full z-10 relative" />
+					<img src="Assets/image/bannerbg.png" alt="Background"
+						class="absolute top-[-175px] right-0 opacity-50 -z-10 hidden lg:block" />
+				</div>
+			</div>
+			<div class="px-6 xl:px-40 py-12">
+				<div
+					class="bg-white shadow-2xl px-6 py-6 rounded-2xl flex flex-col md:flex-row gap-6 items-center justify-between">
+					<div class="flex items-center gap-3">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+							<path
+								d="M16 17.9067C18.2975 17.9067 20.16 16.0442 20.16 13.7467C20.16 11.4492 18.2975 9.58667 16 9.58667C13.7025 9.58667 11.84 11.4492 11.84 13.7467C11.84 16.0442 13.7025 17.9067 16 17.9067Z"
+								stroke="#747474" stroke-width="2" />
+							<path
+								d="M4.82667 11.32C7.45333 -0.226643 24.56 -0.21331 27.1733 11.3334C28.7067 18.1067 24.4933 23.84 20.8 27.3867C18.12 29.9734 13.88 29.9734 11.1867 27.3867C7.50667 23.84 3.29333 18.0934 4.82667 11.32Z"
+								stroke="#747474" stroke-width="2" />
+						</svg>
+						<div>
+							<h6 class="text-[#3E3E3E] font-semibold">Location</h6>
+							<p class="text-[#B6B6B6] text-sm">Search your location</p>
+						</div>
+					</div>
+					<div class="flex items-center gap-3 border-t md:border-t-0 md:border-l md:pl-6 pt-6 md:pt-0">
+						<svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+							<path d="M11.3334 2.66669V6.66669" stroke="#747474" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+							<path d="M22 2.66669V6.66669" stroke="#747474" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+							<path d="M5.33337 12.1199H28" stroke="#747474" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+							<path
+								d="M28.6667 11.3334V22.6667C28.6667 26.6667 26.6667 29.3334 22 29.3334H11.3334C6.66669 29.3334 4.66669 26.6667 4.66669 22.6667V11.3334C4.66669 7.33335 6.66669 4.66669 11.3334 4.66669H22C26.6667 4.66669 28.6667 7.33335 28.6667 11.3334Z"
+								stroke="#747474" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M21.5929 18.2667H21.6049" stroke="#747474" stroke-width="2.66667"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M21.5929 22.2667H21.6049" stroke="#747474" stroke-width="2.66667"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M16.6607 18.2667H16.6727" stroke="#747474" stroke-width="2.66667"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M16.6607 22.2667H16.6727" stroke="#747474" stroke-width="2.66667"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M11.7257 18.2667H11.7377" stroke="#747474" stroke-width="2.66667"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M11.7257 22.2667H11.7377" stroke="#747474" stroke-width="2.66667"
+								stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<div>
+							<h6 class="text-[#3E3E3E] font-semibold">Pickup date</h6>
+							<p class="text-[#B6B6B6] text-sm">Tue 15 Feb, 09:00</p>
+						</div>
+					</div>
+					<div class="flex items-center gap-3 border-t md:border-t-0 md:border-l md:pl-6 pt-6 md:pt-0">
+						<svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+							<path d="M11.0001 2.66669V6.66669" stroke="#747474" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+							<path d="M21.6667 2.66669V6.66669" stroke="#747474" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+							<path d="M5.00006 12.1199H27.6667" stroke="#747474" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+							<path
+								d="M28.3334 11.3334V22.6667C28.3334 26.6667 26.3334 29.3334 21.6667 29.3334H11C6.33337 29.3334 4.33337 26.6667 4.33337 22.6667V11.3334C4.33337 7.33335 6.33337 4.66669 11 4.66669H21.6667C26.3334 4.66669 28.3334 7.33335 28.3334 11.3334Z"
+								stroke="#747474" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M21.2596 18.2667H21.2716" stroke="#747474" stroke-width="2.66667"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M21.2596 22.2667H21.2716" stroke="#747474" stroke-width="2.66667"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M16.3274 18.2667H16.3393" stroke="#747474" stroke-width="2.66667"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M16.3274 22.2667H16.3393" stroke="#747474" stroke-width="2.66667"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M11.3924 18.2667H11.4044" stroke="#747474" stroke-width="2.66667"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M11.3924 22.2667H11.4044" stroke="#747474" stroke-width="2.66667"
+								stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<div>
+							<h6 class="text-[#3E3E3E] font-semibold">Return date</h6>
+							<p class="text-[#B6B6B6] text-sm">Thu 16 Feb, 11:00</p>
+						</div>
+					</div>
+
+					<button class="py-2 px-6 bg-[#1572D3] text-white rounded-lg hover:bg-[#135fb0] w-full md:w-auto">
+						Search
+					</button>
+				</div>
+			</div>
+		</div>
+		
+
+		<section class="py-16 bg-cover bg-center bg-no-repeat"
+			style="background-image: url('Assets/image/Whatpeoplesay.png');">
+			<div class="py-16">
+				<div class="text-center mb-10">
+					<span
+						class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">TESTIMONIALS</span>
+					<h2 class="text-3xl md:text-4xl font-semibold mt-4">What people say about us?</h2>
+				</div>
+				<div class="testimonial-slider ">
+					<!-- Card 1 -->
+					<div class="slide px-3">
+						<div class="max-w-3xl bg-white rounded-2xl shadow-md overflow-hidden flex">
+							<div class="w-1/2  h-80 md:h-auto">
+								<img src="Assets/image/sliimg.png" alt="Charlie Johnson"
+									class="w-full h-full object-cover">
+							</div>
+							<div class="w-1/2 p-6 flex flex-col justify-center space-y-4">
+								<div>
+									<p class="text-4xl font-bold text-gray-900">5.0 <span
+											class="text-lg font-medium text-gray-500">stars</span></p>
+									<div class="flex space-x-1 text-yellow-400 text-xl">
+										<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+									</div>
+								</div>
+								<p class="text-gray-700 text-base">“I feel very secure when using caretall's services.
+									Your
+									customer care team is very enthusiastic and the driver is always on time.”</p>
+								<div>
+									<p class="font-semibold text-gray-900 text-lg">Charlie Johnson</p>
+									<p class="text-sm text-gray-500">From New York, US</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 2 -->
+					<div class="slide px-3">
+						<div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden flex">
+							<div class="w-1/2 h-80 md:h-auto">
+								<img src="Assets/image/sliimg.png" alt="Charlie Johnson"
+									class="w-full h-full object-cover">
+							</div>
+							<div class="w-1/2 p-6 flex flex-col justify-center space-y-4">
+								<div>
+									<p class="text-4xl font-bold text-gray-900">5.0 <span
+											class="text-lg font-medium text-gray-500">stars</span></p>
+									<div class="flex space-x-1 text-yellow-400 text-xl">
+										<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+									</div>
+								</div>
+								<p class="text-gray-700 text-base">“I feel very secure when using caretall's services.
+									Your
+									customer care team is very enthusiastic and the driver is always on time.”</p>
+								<div>
+									<p class="font-semibold text-gray-900 text-lg">Charlie Johnson</p>
+									<p class="text-sm text-gray-500">From New York, US</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 3 -->
+					<div class="slide px-3">
+						<div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden flex">
+							<div class="w-1/2 h-80 md:h-auto">
+								<img src="Assets/image/sliimg.png" alt="Charlie Johnson"
+									class="w-full h-full object-cover">
+							</div>
+							<div class="w-1/2 p-6 flex flex-col justify-center space-y-4">
+								<div>
+									<p class="text-4xl font-bold text-gray-900">5.0 <span
+											class="text-lg font-medium text-gray-500">stars</span></p>
+									<div class="flex space-x-1 text-yellow-400 text-xl">
+										<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+									</div>
+								</div>
+								<p class="text-gray-700 text-base">“I feel very secure when using caretall's services.
+									Your
+									customer care team is very enthusiastic and the driver is always on time.”</p>
+								<div>
+									<p class="font-semibold text-gray-900 text-lg">Charlie Johnson</p>
+									<p class="text-sm text-gray-500">From New York, US</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	
+	<script>
+$(document).ready(function () {
+	$('.testimonial-slider').slick({
+		slidesToShow: 1,
+		centerMode: true,
+		centerPadding: '350px',
+		dots: false,
+		arrows: false,
+		autoplay: true,
+		autoplaySpeed: 2000,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					centerPadding: '60px'
+				}
+			},
+			{
+				breakpoint: 640,
+				settings: {
+					centerPadding: '20px'
+				}
+			}
+		]
+	});
+});</script>
+</body>
+
+</html>

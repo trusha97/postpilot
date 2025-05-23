@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Step Indicator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-cyan-50 flex items-center justify-center min-h-screen">
+
+  <div class="flex space-x-6">
+    <!-- Step Numbers -->
+    <div class="flex flex-col items-end space-y-10">
+      <button onclick="showStep(0)" class="step-num text-cyan-600 text-xl font-mono">01</button>
+      <button onclick="showStep(1)" class="step-num text-cyan-600 text-xl font-mono">02</button>
+      <button onclick="showStep(2)" class="step-num text-cyan-600 text-xl font-mono relative">
+        03
+        <span class="absolute left-full top-1/2 -translate-y-1/2 w-1 h-10 bg-cyan-800 hidden" id="active-line"></span>
+      </button>
+      <button onclick="showStep(3)" class="step-num text-cyan-600 text-xl font-mono">04</button>
+    </div>
+
+    <!-- Step Content -->
+    <div class="space-y-10">
+      <div class="step hidden">
+        <h2 class="text-lg font-semibold text-gray-600">Segment</h2>
+      </div>
+      <div class="step hidden">
+        <h2 class="text-lg font-semibold text-gray-600">Design</h2>
+      </div>
+      <div class="step">
+        <h2 class="text-lg font-semibold text-gray-900">Send</h2>
+        <p class="text-gray-600 mt-1 max-w-xs">
+          One-off announcements or automatically triggered flows. Customers receive their personalized cards within a week.
+        </p>
+      </div>
+      <div class="step hidden">
+        <h2 class="text-lg font-semibold text-gray-600">Convert</h2>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showStep(index) {
+      const steps = document.querySelectorAll('.step');
+      const nums = document.querySelectorAll('.step-num');
+      const activeLine = document.getElementById('active-line');
+
+      steps.forEach((step, i) => {
+        step.classList.toggle('hidden', i !== index);
+        nums[i].classList.toggle('font-bold', i === index);
+        nums[i].classList.toggle('text-gray-900', i === index);
+        nums[i].classList.toggle('text-cyan-600', i !== index);
+      });
+
+      // Move the vertical line
+      const activeBtn = nums[index];
+      const offsetTop = activeBtn.offsetTop + activeBtn.offsetHeight / 2 - 20;
+      activeLine.style.top = `${offsetTop}px`;
+      activeLine.classList.remove('hidden');
+    }
+
+    // Default to step 2 (Send)
+    document.addEventListener('DOMContentLoaded', () => {
+      showStep(2);
+    });
+  </script>
+</body>
+</html>

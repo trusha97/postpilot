@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scrolling Line with Paragraph</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #94d3ce;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-[#e8f8f8] p-10">
+
+  <div class="flex space-x-4 h-40">
+    <!-- Scrollable container for both line and text -->
+    <div class="flex overflow-y-auto h-full custom-scroll w-full space-x-4 relative">
+      
+      <!-- Left scrollable line -->
+      <div class="flex flex-col items-center min-w-[6px]">
+        <div class="w-1 h-full bg-gray-800"></div>
+      </div>
+
+      <!-- Scrollable text -->
+      <div class="text-sm text-gray-600 pr-2 w-full">
+        One-off announcements or automatically triggered flows. Customers receive their personalized cards within a week.
+        <br /><br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+        Scrollable text content here... <br />
+      </div>
+
+      <!-- Light blue static line (outside of scroll area) -->
+      <div class="absolute left-0 top-0 w-0.5 h-full bg-[#b2e4e4] z-[-1]"></div>
+      
+    </div>
+  </div>
+
+</body>
+</html>
